@@ -43,7 +43,7 @@ public class Calibrator
 
     private int FindFirstDigit(string line)
     {
-        for (var i = 0; i < line.Length; i++)
+        for (var i = 0; i <= line.Length; i++)
         {
             var value = 0;
 

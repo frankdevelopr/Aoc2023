@@ -20,13 +20,13 @@ public class CalibratorTest
     }
 
     [Theory]
-    //[InlineData("test2.txt", 281)]
-    [InlineData("problem1.txt", 0)]
+    [InlineData("test2.txt", 281)]
+    [InlineData("problem1.txt", 52834)]
     public void Given_SecondCalibratorVersion_Returns_ExpectedNumber(string file, int expectedNumber)
     {
         var sut = new Calibrator();
 
-        var lines = File.ReadAllLines($"./data/{file}");
+        var lines = File.ReadAllLines($"./data/{file}").Reverse();
 
         var result = sut.Calibrate(lines);
 
@@ -37,6 +37,7 @@ public class CalibratorTest
     [InlineData("two1nine", 29)]
     [InlineData("eightwothree", 83)]
     [InlineData("abcone2threexyz", 13)]
+    [InlineData("jjhclx3", 33)]
     public void Given_SecondCalibratorVersion_When_GivenLine_Returns_ExpectedNumber(string line, int expectedNumber)
     {
         var sut = new Calibrator();
@@ -45,5 +46,7 @@ public class CalibratorTest
 
         result.Should().Be(expectedNumber);
     }
+
+    
 
 }
