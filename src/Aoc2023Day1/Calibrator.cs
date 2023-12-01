@@ -1,4 +1,5 @@
-﻿namespace Aoc2023Day1;
+﻿
+namespace Aoc2023Day1;
 
 public class Calibrator
 {
@@ -13,6 +14,24 @@ public class Calibrator
 
             var first = FindFirstDigit(line);
             var last = FindLastDigit(line);
+
+            Console.WriteLine(line + "produces: " + first + "" + last);
+
+            total += first * 10 + int.Parse(last.ToString());
+        }
+
+        return total;
+    }
+
+    public object CalibrateFirst(string[] lines)
+    {
+        var total = 0;
+
+        foreach (var line in lines)
+        {
+
+            var first = int.Parse(line.First(c => char.IsDigit(c)).ToString());
+            var last = int.Parse(line.Last(c => char.IsDigit(c)).ToString());
 
             Console.WriteLine(first + "" + last);
 

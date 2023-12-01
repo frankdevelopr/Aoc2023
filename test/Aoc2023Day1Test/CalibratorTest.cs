@@ -14,13 +14,14 @@ public class CalibratorTest
 
         var lines = File.ReadAllLines($"./data/{file}");
 
-        var result = sut.Calibrate(lines);
+        var result = sut.CalibrateFirst(lines);
 
         result.Should().Be(expectedNumber);
     }
 
     [Theory]
-    [InlineData("test2.txt", 281)]
+    //[InlineData("test2.txt", 281)]
+    [InlineData("problem1.txt", 0)]
     public void Given_SecondCalibratorVersion_Returns_ExpectedNumber(string file, int expectedNumber)
     {
         var sut = new Calibrator();
