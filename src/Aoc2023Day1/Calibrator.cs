@@ -2,18 +2,7 @@
 
 public class Calibrator
 {
-    private static readonly Dictionary<string, int> Numbers = new Dictionary<string, int>()
-    {
-        ["one"] = 1,
-        ["two"] = 2,
-        ["three"] = 3,
-        ["four"] = 4,
-        ["five"] = 5,
-        ["six"] = 6,
-        ["seven"] = 7,
-        ["eight"] = 8,
-        ["nine"] = 9
-    };
+    private DigitText _digitText = new DigitText();
 
     public int Calibrate(IEnumerable<string> calibrationLines)
     {
@@ -80,11 +69,6 @@ public class Calibrator
             return true;
         }
 
-        if (Numbers.TryGetValue(word, out number))
-        {
-            return true;
-        }
-
-        return false;
+        return _digitText.ContainsDigit(word, out number);
     }
 }
