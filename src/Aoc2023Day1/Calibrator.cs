@@ -1,19 +1,9 @@
-﻿namespace Aoc2023Day1;
+﻿
+namespace Aoc2023Day1;
 
 public class Calibrator
 {
-    private static readonly Dictionary<string, int> Numbers = new Dictionary<string, int>()
-    {
-        ["one"] = 1,
-        ["two"] = 2,
-        ["three"] = 3,
-        ["four"] = 4,
-        ["five"] = 5,
-        ["six"] = 6,
-        ["seven"] = 7,
-        ["eight"] = 8,
-        ["nine"] = 9
-    };
+    private DigitText _digitText = new DigitText();
 
     public int Calibrate(IEnumerable<string> calibrationLines)
     {
@@ -25,6 +15,24 @@ public class Calibrator
             var first = FindFirstDigit(line);
             var last = FindLastDigit(line);
 
+            Console.WriteLine(line + "produces: " + first + "" + last);
+
+            total += first * 10 + int.Parse(last.ToString());
+        }
+
+        return total;
+    }
+
+    public object CalibrateFirst(string[] lines)
+    {
+        var total = 0;
+
+        foreach (var line in lines)
+        {
+
+            var first = int.Parse(line.First(c => char.IsDigit(c)).ToString());
+            var last = int.Parse(line.Last(c => char.IsDigit(c)).ToString());
+
             Console.WriteLine(first + "" + last);
 
             total += first * 10 + int.Parse(last.ToString());
@@ -35,7 +43,7 @@ public class Calibrator
 
     private int FindFirstDigit(string line)
     {
-        for (var i = 0; i < line.Length; i++)
+        for (var i = 0; i <= line.Length; i++)
         {
             var value = 0;
 
@@ -80,11 +88,6 @@ public class Calibrator
             return true;
         }
 
-        if (Numbers.TryGetValue(word, out number))
-        {
-            return true;
-        }
-
-        return false;
+        return _digitText.ContainsDigit(word, out number);
     }
 }
