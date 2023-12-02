@@ -4,9 +4,21 @@ public class Game
 {
     public int Id { get; set; }
     public CubeSet AcceptedCubeSet { get; set; } = new CubeSet();
-    
-    public void Add(CubeSet cube)
+
+    public Game()
+    {
+    }
+
+    public Game(int id, CubeSet acceptedCubeSet)
+    {
+        Id = id;
+        AcceptedCubeSet = acceptedCubeSet;
+    }
+
+    public Game Add(CubeSet cube)
     {
         AcceptedCubeSet = cube.MergeMax(AcceptedCubeSet);
+
+        return this;
     }
 }

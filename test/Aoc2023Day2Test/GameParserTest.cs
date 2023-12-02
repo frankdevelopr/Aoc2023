@@ -17,6 +17,14 @@ public class GameParserTest
         var games = sut.Parse(lines);
 
         games.Should().HaveCount(5);
+        games.Should().BeEquivalentTo(
+            new[] {
+                new Game(1, new CubeSet(4, 2, 6)),
+                new Game(2, new CubeSet(1, 3, 4)),
+                new Game(3, new CubeSet(20, 13, 6)),
+                new Game(4, new CubeSet(14, 3, 15)),
+                new Game(5, new CubeSet(6, 3, 2))
+            });
 
     }
 
