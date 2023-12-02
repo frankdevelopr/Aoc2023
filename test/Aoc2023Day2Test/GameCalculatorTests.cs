@@ -18,14 +18,6 @@ public class GameCalculatorTests
         result.Should().Be(expectedIdSum);
     }
 
-    private static IEnumerable<Game> ReadGames(string file)
-    {
-        var lines = File.ReadAllLines($"data/{file}");
-        var parser = new GameParser();
-        var games = parser.Parse(lines);
-        return games;
-    }
-
     [Theory]
     [InlineData("test2-1.txt", 2286)]
     [InlineData("problem2.txt", 71585)]
@@ -51,5 +43,14 @@ public class GameCalculatorTests
         var result = calculator.MinimumPowerSum();
 
         result.Should().Be(expectedPower);
+    }
+
+    private static IEnumerable<Game> ReadGames(string file)
+    {
+        var lines = File.ReadAllLines($"data/{file}");
+        var parser = new GameParser();
+        var games = parser.Parse(lines);
+
+        return games;
     }
 }

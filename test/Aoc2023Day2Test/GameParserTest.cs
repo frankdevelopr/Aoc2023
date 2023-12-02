@@ -25,9 +25,7 @@ public class GameParserTest
                 new Game(4, new CubeSet(14, 3, 15)),
                 new Game(5, new CubeSet(6, 3, 2))
             });
-
     }
-
 
     [Theory]
     [InlineData("Game 1: 3 blue, 4 red")]
@@ -53,6 +51,4 @@ public class GameParserTest
         game.Id.Should().Be(1);
         game.AcceptedCubeSet.Should().BeEquivalentTo(new CubeSet(4, 2, 6));
     }
-
-
 }

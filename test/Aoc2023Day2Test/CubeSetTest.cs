@@ -45,7 +45,7 @@ public class CubeSetTest
         var otherCubeSet = new CubeSet(red, green, blue);
 
         var result = otherCubeSet.FitsIn(_cube567);
-        
+
         result.Should().BeTrue();
     }
 
@@ -59,7 +59,7 @@ public class CubeSetTest
         var otherCubeSet = new CubeSet(red, green, blue);
 
         var result = otherCubeSet.FitsIn(_cube567);
-        
+
         result.Should().BeFalse();
     }
 
@@ -79,6 +79,5 @@ public class CubeSetTest
         max.Red.Should().Be(expectedRed);
         max.Green.Should().Be(expectedGreen);
         max.Blue.Should().Be(expectedBlue);
-
     }
 }

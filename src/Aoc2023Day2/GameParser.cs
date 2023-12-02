@@ -34,7 +34,7 @@ public class GameParser
         return game;
     }
 
-    private CubeSet ParseCubeSet(string cubeSet)
+    private static CubeSet ParseCubeSet(string cubeSet)
     {
         var cube = new CubeSet();
 
@@ -66,6 +66,5 @@ public class GameParser
         }
 
         return cube;
-
     }
 }

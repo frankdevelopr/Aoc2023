@@ -26,13 +26,13 @@ public class GameCalculator
     {
         var power = 0;
 
-        foreach (var game in _games) 
+        var cubes = _games.Select(g => g.AcceptedCubeSet);
+
+        foreach (var cube in cubes)
         {
-            var cube = game.AcceptedCubeSet;
             power += cube.Red * cube.Green * cube.Blue;
         }
 
         return power;
     }
-
 }
