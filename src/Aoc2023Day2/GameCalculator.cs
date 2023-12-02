@@ -21,4 +21,18 @@ public class GameCalculator
 
         return possible.Sum(t => t.Id);
     }
+
+    public int MinimumPowerSum()
+    {
+        var power = 0;
+
+        foreach (var game in _games) 
+        {
+            var cube = game.AcceptedCubeSet;
+            power += cube.Red * cube.Green * cube.Blue;
+        }
+
+        return power;
+    }
+
 }
