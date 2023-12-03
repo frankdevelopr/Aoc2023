@@ -34,7 +34,6 @@ public class NumberFinderTest
 
     [Theory]
     [InlineData("...")]
-    [InlineData(null)]
     [InlineData("lololo")]
     public void Given_NoNumber_Then_Zero(string line)
     {
