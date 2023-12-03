@@ -40,4 +40,29 @@ public class SymbolTest
 
         result.Should().BeFalse();
     }
+
+    [Theory]
+    [InlineData(".....*..")]
+    [InlineData("-......")]
+    [InlineData("......+")]
+    [InlineData("aaaa$")]
+    public void Given_StringWithSymbol_Then_ReturnsTrue(string str)
+    {
+        var result = _sut.ContainsSymbol(str);
+
+        result.Should().BeTrue();
+    }
+
+    [Theory]
+    [InlineData("......")]
+    [InlineData("a......")]
+    [InlineData("......<")]
+    [InlineData("abcde")]
+    [InlineData("")]
+    public void Given_StringWithoutSymbol_Then_ReturnsFalse(string str)
+    {
+        var result = _sut.ContainsSymbol(str);
+
+        result.Should().BeFalse();
+    }
 }
