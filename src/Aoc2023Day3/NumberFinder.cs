@@ -9,6 +9,8 @@ public class NumberFinder
         var numbers = new List<NumberFound>();
         var tokenizer = new StringBuilder();
 
+        var lastPosition = 0;
+
         foreach (var item in line)
         {
             if (char.IsDigit(item))
@@ -17,23 +19,30 @@ public class NumberFinder
             }
             else
             {
-                TryAddNumber(numbers, tokenizer);
+                TryAddNumber(numbers, tokenizer, lastPosition);
                 tokenizer.Clear();
             }
+
+            lastPosition++;
         }
 
-        TryAddNumber(numbers, tokenizer);
+        TryAddNumber(numbers, tokenizer, lastPosition);
 
         return numbers;
     }
 
-    private static void TryAddNumber(List<NumberFound> numbers, StringBuilder tokenizer)
+    private static void TryAddNumber(List<NumberFound> numbers, StringBuilder tokenizer, int lastPosition)
     {
-        if (tokenizer.Length == 0)
+        var len = tokenizer.Length;
+
+        if (len == 0)
         {
             return;
         }
 
-        numbers.Add(new NumberFound(int.Parse(tokenizer.ToString())));
+        var start = lastPosition - len;
+        var number = new NumberFound(int.Parse(tokenizer.ToString()), start, lastPosition);
+
+        numbers.Add(number);
     }
 }
