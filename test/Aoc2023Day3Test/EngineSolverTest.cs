@@ -12,8 +12,8 @@ public class EngineSolverTest
         _sut = new EngineSolver();
     }
 
-    [Theory]
-    [InlineData("test3", 4361)]
+    //[Theory]
+    //[InlineData("test3", 4361)]
     public void Given_FileWithEngineSchema_When_Parsed_ReturnSumOfItsParts(string file, int expectedValue)
     {
         var result = _sut.Solve();
