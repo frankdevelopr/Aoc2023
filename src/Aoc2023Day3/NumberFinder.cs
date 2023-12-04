@@ -41,7 +41,7 @@ public class NumberFinder
         }
 
         var start = lastPosition - len;
-        var number = new NumberFound(int.Parse(tokenizer.ToString()), start, lastPosition);
+        var number = new NumberFound(int.Parse(tokenizer.ToString()), start, lastPosition - 1);
 
         numbers.Add(number);
     }

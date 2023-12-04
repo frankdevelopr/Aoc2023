@@ -2,7 +2,8 @@
 
 public class Symbol
 {
-    public const string SymbolList = "+-/\\$*";
+    public const string SymbolList = "*$+-%#&=/@";
+    private const char GearSymbol = '*';
 
     public bool ContainsSymbol(string str)
     {
@@ -20,5 +21,10 @@ public class Symbol
     public bool IsSymbol(char symbol)
     {
         return SymbolList.Contains(symbol);
+    }
+
+    public bool IsGear(char symbol)
+    {
+        return symbol == GearSymbol;
     }
 }

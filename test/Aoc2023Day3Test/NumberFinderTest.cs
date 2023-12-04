@@ -52,6 +52,22 @@ public class NumberFinderTest
         result.Select(r => r.Value).Should().ContainInOrder(expectedData);
     }
 
+    [Theory]
+    [InlineData("3", 0, 0)]
+    [InlineData(".3", 1, 1)]
+    [InlineData("3151", 0, 3)]
+    [InlineData(".3151", 1, 4)]
+    [InlineData("322.", 0, 2)]
+    [InlineData("..31..", 2, 3)]
+    public void Given_ValidNumber_Then_PositionsAreOk(string line, int start, int end)
+    {
+        var result = _sut.Find(line);
+
+        result.Should().ContainSingle();
+        result.Single().StartPosition.Should().Be(start);
+        result.Single().EndPosition.Should().Be(end);
+    }
+
     public static TheoryData<string, int[]> MultipleNumbers
     {
         get

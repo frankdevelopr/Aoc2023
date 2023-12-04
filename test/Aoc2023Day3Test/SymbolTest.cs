@@ -17,8 +17,8 @@ public class SymbolTest
     [InlineData('+')]
     [InlineData('*')]
     [InlineData('/')]
-    [InlineData('\\')]
     [InlineData('$')]
+    [InlineData('*')]
     public void Given_ValidSymbol_Then_ReturnsTrue(char symbol)
     {
         var result = _sut.IsSymbol(symbol);
