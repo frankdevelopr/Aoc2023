@@ -18,10 +18,17 @@ public class SymbolTest
     [InlineData('*')]
     [InlineData('/')]
     [InlineData('$')]
-    [InlineData('*')]
     public void Given_ValidSymbol_Then_ReturnsTrue(char symbol)
     {
         var result = _sut.IsSymbol(symbol);
+
+        result.Should().BeTrue();
+    }
+
+    [Fact]
+    public void Given_Gear_When_GearCalled_ThenReturnsTrue()
+    {
+        var result = _sut.IsGear('*');
 
         result.Should().BeTrue();
     }

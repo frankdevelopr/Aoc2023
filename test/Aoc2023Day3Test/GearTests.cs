@@ -33,11 +33,10 @@ public class GearTests
         var numFinder = new NumberFinder();
         var numbers = numFinder.Find(line);
 
-        var sut = new Gear(1);
+        var sut = new Gear(gearPosition);
 
         sut.LookForAdjacents(numbers, NoNumbers, NoNumbers);
 
         sut.Result().Should().Be(0);
     }
-
 }
