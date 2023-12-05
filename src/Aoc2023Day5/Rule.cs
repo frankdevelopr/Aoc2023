@@ -13,16 +13,18 @@ public class Rule
         _sourceRangeEnd = sourceRange + rangeLength;
 	}
 
-	public int Apply(int input)
+	public bool TryApply(int input, out int value)
     {
         if (!(input >= _sourceRange && input < _sourceRangeEnd))
         {
-            return input;
+            value = input;
+            return false;
         }
 
         var diff = input - _sourceRange;
         var output = _destinationRange + diff;
+        value = output;
 
-        return output;
+        return true;
     }
 }
