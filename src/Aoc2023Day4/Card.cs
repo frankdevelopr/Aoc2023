@@ -1,5 +1,4 @@
-﻿
-namespace Aoc2023Day4;
+﻿namespace Aoc2023Day4;
 
 public class Card
 {

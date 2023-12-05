@@ -1,0 +1,13 @@
+﻿problem was easy to solve, having set structure in c#.
+parsing can be cleaner, maybe using regex.
+TDD usually takes time.
+part 2 - really easy to adapt from part 1.
+
+problems: indexes and spaces always play funny with me.
+
+difficulty **
+effort *** 
+effor(part 2) *
+enjoy ****
+
+invested time: 2 to 4 hours (?)
