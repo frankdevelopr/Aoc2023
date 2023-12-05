@@ -1,10 +1,13 @@
-﻿namespace Aoc2023Day4;
+﻿
+namespace Aoc2023Day4;
 
 public class Card
 {
     public int Id { get; }
 
-    public IEnumerable<int> WinningNumbers { get; }
+    public HashSet<int> WinningNumbers { get; }
+    public HashSet<int> OwnNumbers { get; }
+    public int Score { get; }
 
     public Card(int id, IEnumerable<int> winningNumbers)
     {
@@ -12,9 +15,17 @@ public class Card
         WinningNumbers = winningNumbers.ToHashSet();
     }
 
-    public int Score(IEnumerable<int> numbers)
+    public Card(int id, IEnumerable<int> winningNumbers, IEnumerable<int> ownNumbers)
     {
-        var wins = WinningNumbers.Intersect(numbers);
+        Id = id;
+        WinningNumbers = winningNumbers.ToHashSet();
+        OwnNumbers = ownNumbers.ToHashSet();
+        Score = CalculateScore();
+    }
+
+    public int CalculateScore()
+    {
+        var wins = WinningNumbers.Intersect(OwnNumbers);
 
         if (!wins.Any())
         {
@@ -23,5 +34,4 @@ public class Card
 
         return (int)Math.Pow(2, wins.Count() - 1);
     }
-
 }
