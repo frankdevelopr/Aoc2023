@@ -26,6 +26,7 @@ public class CardReaderTests
     [InlineData("Card 1: 1 | 1", 1, 1)]
     [InlineData("Card 2: 3 2 11 | 99 2 3", 2, 2)]
     [InlineData("Card 3: 1 2 11 4 1928 | 97 1 2 11", 3, 4)]
+    [InlineData("Card 193: 53 40  5 39 13 12 27 57 68 45 | 67 10 87 64 22  6 77 17 20 24 78 52 19 18 99 88 66 31 65 47 11 61 90  9 92", 193, 0)]
     public void Given_ValidSingleCard_Then_ReturnsExpectedCard(string line, int cardNo, int expectedScore)
     {
         var cards = _sut.Read([line]).ToList();
@@ -51,11 +52,12 @@ public class CardReaderTests
     {
         get
         {
-            var data = new TheoryData<string[], int[], int[]>();
-
-            data.Add(["Card 1: 1 | 1", "Card 2: 3 2 11 | 99 2 3", "Card 3: 1 2 11 4 1928 | 97 1 2 11"], [1, 2, 3], [1, 2, 4]);
-            data.Add(["1", "Card 2: 3 2 11 99 2 3", ""], [], []);
-            data.Add(["1", "Card 2: 3 2 11 99 2 3 | 88", ""], [2], [0]);
+            var data = new TheoryData<string[], int[], int[]>
+            {
+                { ["Card 1: 1 | 1", "Card 2: 3 2 11 | 99 2 3", "Card 3: 1 2 11 4 1928 | 97 1 2 11"], [1, 2, 3], [1, 2, 4] },
+                { ["1", "Card 2: 3 2 11 99 2 3", ""], [], [] },
+                { ["1", "Card 2: 3 2 11 99 2 3 | 88", ""], [2], [0] }
+            };
 
             return data;
         }

@@ -22,7 +22,9 @@ public class CardReader
                 continue;
             }
 
-            if (!int.TryParse(parts[0].Split(" ")[1], out var cardNo))
+            var cardNoParts = parts[0].Split(" ");
+            var cardNoTxt = cardNoParts[^1].Trim();
+            if (!int.TryParse(cardNoTxt, out var cardNo))
             {
                 continue;
             }
