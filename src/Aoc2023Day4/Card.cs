@@ -8,6 +8,7 @@ public class Card
     public HashSet<int> WinningNumbers { get; }
     public HashSet<int> OwnNumbers { get; }
     public int Score { get; }
+    public int MatchingNumbers { get; private set; }
 
     public Card(int id, IEnumerable<int> winningNumbers, IEnumerable<int> ownNumbers)
     {
@@ -20,6 +21,8 @@ public class Card
     public int CalculateScore()
     {
         var wins = WinningNumbers.Intersect(OwnNumbers);
+
+        MatchingNumbers = wins.Count();
 
         if (!wins.Any())
         {
