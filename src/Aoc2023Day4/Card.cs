@@ -9,12 +9,6 @@ public class Card
     public HashSet<int> OwnNumbers { get; }
     public int Score { get; }
 
-    public Card(int id, IEnumerable<int> winningNumbers)
-    {
-        Id = id;
-        WinningNumbers = winningNumbers.ToHashSet();
-    }
-
     public Card(int id, IEnumerable<int> winningNumbers, IEnumerable<int> ownNumbers)
     {
         Id = id;
