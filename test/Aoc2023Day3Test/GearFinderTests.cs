@@ -20,14 +20,8 @@ public class GearFinderTests
     [InlineData("...", 0)]
     public void Given_TextWithGears_Then_FindsThemAll(string line, int expectedGears)
     {
-        var numbers = _numFinder.Find(line);
-
         var result = _sut.Find(line, string.Empty, string.Empty);
 
         result.Should().HaveCount(expectedGears);
     }
-
-
-
-
 }
