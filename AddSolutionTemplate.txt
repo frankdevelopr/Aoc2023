@@ -1,4 +1,5 @@
-dotnet new console -n Aoc2023DayXXTest -o src/Aoc2023DayXX
+dotnet new sln --name DayXX
+dotnet new console -n Aoc2023DayXX -o src/Aoc2023DayXX
 dotnet new xunit -n Aoc2023DayXXTest -o test/Aoc2023DayXXTest
 
 dotnet sln DayXX.sln add src/Aoc2023DayXX
