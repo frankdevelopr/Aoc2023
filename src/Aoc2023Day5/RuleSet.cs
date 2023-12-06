@@ -1,18 +1,24 @@
-﻿
-namespace Aoc2023Day5;
+﻿namespace Aoc2023Day5;
 
 public class RuleSet
 {
-    private readonly IEnumerable<Rule> _rules;
+    public List<Rule> Rules { get; } = [];
 
-    public RuleSet(IEnumerable<Rule> rules)
+    public string Name { get; }
+
+    public RuleSet(IEnumerable<Rule> rules, string name = "") : this(name)
     {
-        _rules = rules;
+        Rules = rules.ToList();
     }
 
-    public int Apply(int input)
+    public RuleSet(string name)
     {
-        foreach (var rule in _rules)
+        Name = name;
+    }
+
+    public long Apply(long input)
+    {
+        foreach (var rule in Rules)
         {
             if (rule.TryApply(input, out var output))
             {
@@ -21,5 +27,12 @@ public class RuleSet
         }
 
         return input;
+    }
+
+    public RuleSet Add(Rule rule)
+    {
+        Rules.Add(rule);
+
+        return this;
     }
 }

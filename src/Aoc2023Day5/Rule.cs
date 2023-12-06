@@ -2,18 +2,18 @@
 
 public class Rule
 {
-    private readonly int _destinationRange;
-    private readonly int _sourceRange;
-    private readonly int _sourceRangeEnd;
+    private readonly long _destinationRange;
+    private readonly long _sourceRange;
+    private readonly long _sourceRangeEnd;
 
-    public Rule(int destinationRange, int sourceRange, int rangeLength)
+    public Rule(long destinationRange, long sourceRange, long rangeLength)
 	{
 		_destinationRange = destinationRange;
 		_sourceRange = sourceRange;
         _sourceRangeEnd = sourceRange + rangeLength;
 	}
 
-	public bool TryApply(int input, out int value)
+	public bool TryApply(long input, out long value)
     {
         if (!(input >= _sourceRange && input < _sourceRangeEnd))
         {
