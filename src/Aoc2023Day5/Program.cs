@@ -14,7 +14,7 @@ Console.WriteLine($"Expected executions {expected}");
 var watcher = new Stopwatch();
 
 watcher.Start();
-var lowest = finder.FindLowestParallel();
+var lowest = finder.FindLowestLocationRange();
 watcher.Stop();
 
 Console.WriteLine($"Lowest is {lowest} (took {watcher.Elapsed})");

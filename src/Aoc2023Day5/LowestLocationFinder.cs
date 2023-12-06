@@ -36,8 +36,6 @@ public class LowestLocationFinder
 
     public long FindLowestParallel()
     {
-        var executions = 0L;
-
         var seeds = Map.Seeds.ToArray();
         var lowest = long.MaxValue;
 
@@ -55,24 +53,12 @@ public class LowestLocationFinder
                 var value = ApplyMap(j);
                 lowest = Math.Min(lowest, value);
             });
-
-            /*for (var j = ini; j < end; j++)
-            {
-                var value = ApplyMap(j);
-                lowest = Math.Min(lowest, value);
-
-                executions++;
-                if (executions % 20000000 == 0)
-                {
-                    Console.WriteLine($"executed: {executions} times already");
-                }
-            }*/
         }
 
         return lowest;
-
     }
 
+    // Right solution
     public long FindLowestLocationRange()
     {
         var executions = 0L;
@@ -125,6 +111,4 @@ public class LowestLocationFinder
 
         return value;
     }
-
-    
 }
