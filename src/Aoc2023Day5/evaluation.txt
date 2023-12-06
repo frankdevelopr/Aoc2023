@@ -1,14 +1,18 @@
 ﻿work log
 * started day 5 at 19:30h (on phone sometime) 20:42 end
-* at 9:30 - 
+* at 9:30 - to 11:00h -> 2:30h for part 1
+
 
 own comments
 ------------
 wording was quite long this time... :/
 just some conversions with same logic but for different purpose
+part 1 worked at first attempt :O
+some parts can be cleaned up or refactored a little
 
-difficulty at first glance *
-difficulty 
-effort 
+difficulty of part 1 at first glance *
+difficulty of part 2 at first glance *
+difficulty *
+effort ***
 effor(part 2) 
-enjoy 
+enjoy ***
