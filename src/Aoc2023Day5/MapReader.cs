@@ -3,17 +3,9 @@ namespace Aoc2023Day5;
 
 public class MapReader
 {
-    // Can be made more generic with List (order is important) from section to 
-
     public List<string> Lines { get; }
-    public IEnumerable<long> Seeds { get; }
-    public RuleSet ToSoil { get; }
-    public RuleSet ToFertilizer { get; }
-    public RuleSet ToWater { get; }
-    public RuleSet ToLight { get; }
-    public RuleSet ToTemp { get; }
-    public RuleSet ToHumidity { get; }
-    public RuleSet ToLocation { get; }
+
+    public Map Map { get; } = new Map();
 
     // Dirty reader
 
@@ -21,14 +13,14 @@ public class MapReader
     {
         Lines = lines.ToList();
 
-        Seeds = ReadSeeds();
-        ToSoil = ReadSection("seed-to-soil");
-        ToFertilizer = ReadSection("soil-to-fertilizer");
-        ToWater = ReadSection("fertilizer-to-water");
-        ToLight = ReadSection("water-to-light");
-        ToTemp = ReadSection("light-to-temperature");
-        ToHumidity = ReadSection("temperature-to-humidity");
-        ToLocation = ReadSection("humidity-to-location");
+        Map.Seeds = ReadSeeds();
+        Map.ToSoil = ReadSection("seed-to-soil");
+        Map.ToFertilizer = ReadSection("soil-to-fertilizer");
+        Map.ToWater = ReadSection("fertilizer-to-water");
+        Map.ToLight = ReadSection("water-to-light");
+        Map.ToTemp = ReadSection("light-to-temperature");
+        Map.ToHumidity = ReadSection("temperature-to-humidity");
+        Map.ToLocation = ReadSection("humidity-to-location");
     }
 
     private IEnumerable<long> ReadSeeds()
