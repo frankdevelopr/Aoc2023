@@ -17,8 +17,23 @@ public class LowestLocationFinderTest
 
         var sut = new LowestLocationFinder(mapReader.Map);
 
-        sut.LowestLocation.Should().Be(expectedLocation);
+        sut.FindLowestLocation().Should().Be(expectedLocation);
     }
+
+    [Theory]
+    [InlineData("test5.txt", 46)]
+    [InlineData("problem5.txt", 10834440)]
+    public void Given_ValidMapEx_Then_ReturnsLowestLocation(string file, long expectedLocation)
+    {
+        var lines = ReadFile(file);
+
+        var mapReader = new MapReader(lines);
+
+        var sut = new LowestLocationFinder(mapReader.Map);
+
+        sut.FindLowestLocationRange().Should().Be(expectedLocation);
+    }
+
 
     private string[] ReadFile(string fileName)
     {

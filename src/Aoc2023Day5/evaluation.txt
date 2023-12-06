@@ -9,10 +9,22 @@ wording was quite long this time... :/
 just some conversions with same logic but for different purpose
 part 1 worked at first attempt :O
 some parts can be cleaned up or refactored a little
+part2 it seems to much data in... takes really long :/
+this should be optimized since with current implementation it needs to be executed 2.4 billions times, which in my computer take several minutes (in release mode)
+
+6:05 minutes to calculate the whole thing (!) in release mode
+with dirty parallel for (wrong implementation even getting good result) it took 1:58 seconds in release mode
+
+advice
+* investigate parallel.for
+  * https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff963547(v=pandp.10)
+* find better solution, not so expensive in CPU terms (there should be a shortcut I assume)
+* take into consideration long data
+* be aware of indexes +1 -1, end conditions and so on
 
 difficulty of part 1 at first glance *
 difficulty of part 2 at first glance *
 difficulty *
 effort ***
-effor(part 2) 
+effor(part 2) ***** (lazy to find performant solution, moved to day 6)
 enjoy ***

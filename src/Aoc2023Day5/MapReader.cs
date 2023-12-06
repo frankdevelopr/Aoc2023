@@ -1,5 +1,4 @@
-﻿
-namespace Aoc2023Day5;
+﻿namespace Aoc2023Day5;
 
 public class MapReader
 {
