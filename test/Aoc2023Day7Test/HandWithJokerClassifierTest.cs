@@ -5,6 +5,13 @@ namespace Aoc2023Day7Test;
 
 public class HandWithJokerClassifierTest
 {
+    private readonly HandWithJokerClassifier _sut;
+
+    public HandWithJokerClassifierTest()
+    {
+        _sut = new HandWithJokerClassifier();
+    }
+
     [Theory]
     [InlineData("32TJK", HandType.OnePair)]
     [InlineData("32T3K", HandType.OnePair)]
@@ -47,4 +54,54 @@ public class HandWithJokerClassifierTest
 
         sut.CardValue(label).Should().Be(expectedValue);
     }
+
+    [Theory]
+    [InlineData("72772", HandType.FullHouse)]
+    [InlineData("8Q278", HandType.OnePair)]
+    [InlineData("QQJQQ", HandType.FiveKind)]
+    [InlineData("77778", HandType.FourKind)]
+    [InlineData("QAJ8A", HandType.ThreeKind)]
+    [InlineData("87A6K", HandType.HighCard)]
+    [InlineData("TTTT5", HandType.FourKind)]
+    [InlineData("QJ4QA", HandType.ThreeKind)]
+    [InlineData("6K688", HandType.TwoPair)]
+    [InlineData("93A4Q", HandType.HighCard)]
+    [InlineData("A66J9", HandType.ThreeKind)]
+    [InlineData("J7773", HandType.FourKind)]
+    [InlineData("88Q88", HandType.FourKind)]
+    [InlineData("TTT48", HandType.ThreeKind)]
+    [InlineData("88887", HandType.FourKind)]
+    [InlineData("27227", HandType.FullHouse)]
+    [InlineData("JQQ54", HandType.ThreeKind)]
+    [InlineData("67666", HandType.FourKind)]
+    [InlineData("5AT77", HandType.OnePair)]
+    [InlineData("A96AA", HandType.ThreeKind)]
+    public void Given_Data_Then_WellClassified(string handText, HandType expected)
+    {
+        var hand = new Hand(handText, 0);
+
+        var result = _sut.Classify(hand);
+        
+        result.Should().Be(expected);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

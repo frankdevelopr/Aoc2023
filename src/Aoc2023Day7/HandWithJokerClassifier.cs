@@ -16,7 +16,8 @@ public class HandWithJokerClassifier : IHandClassifier
             return HandType.FourKind;
         }
 
-        if (dict.Values.Any(t => t + jokers == 3) && dict.Values.Any(t => t == 2))
+        if (dict.Values.Count == 2 && 
+            dict.Values.Any(t => t + jokers == 3) && dict.Values.Any(t => t == 2))
         {
             return HandType.FullHouse;
         }
