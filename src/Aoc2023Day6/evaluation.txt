@@ -1,14 +1,15 @@
 ﻿work log
-@ 12:00h
+@ 12:00h - 12:45h 45'
 
 own comments
+* quick solution
 
-advice
+own advice
 
 evaluation 
 difficulty of part 1 at first glance *
 difficulty of part 2 at first glance
-difficulty
-effort
+difficulty *
+effort **
 effor (part 2) 
 enjoy ***

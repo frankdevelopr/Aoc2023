@@ -27,4 +27,13 @@
     <ProjectReference Include="..\..\src\Aoc2023Day6\Aoc2023Day6.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="data\problem6.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="data\test6.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

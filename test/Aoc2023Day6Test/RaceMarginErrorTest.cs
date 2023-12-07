@@ -12,4 +12,21 @@ public class RaceMarginErrorTest
 
         sut.ErrorMargin.Should().Be(288);
     }
+
+    [Theory]
+    [InlineData("test6.txt", 288)]
+    [InlineData("problem6.txt", 303600)]
+    public void Given_RacesInFile_Then_ReturnsMarginOfError(string file, int expectedMargin)
+    {
+        var lines = File.ReadAllLines($"data/{file}");
+
+        var raceReader = new RaceReader(lines);
+        var races = raceReader.Races;
+
+        var sut = new RaceMarginError(races);
+
+        var result = sut.ErrorMargin;
+
+        result.Should().Be(expectedMargin);
+    }
 }
