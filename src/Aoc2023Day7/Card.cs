@@ -2,16 +2,16 @@
 
 public class Card
 {
-    public string Label { get; }
+    public char Label { get; }
     public int Value { get; }
 
-    public Card(string faceValue)
+    public Card(char faceValue)
     {
         Label = faceValue;
         Value = GetValue(faceValue);
     }
 
-    private static int GetValue(string labelValue)
+    public static int GetValue(char labelValue)
     {
         if (ValueMapper.TryGetValue(labelValue, out var value))
         {
@@ -21,21 +21,21 @@ public class Card
         return 0;
     }
 
-    private static Dictionary<string, int> ValueMapper = new Dictionary<string, int>
+    private static Dictionary<char, int> ValueMapper = new Dictionary<char, int>
     {
-        ["A"] = 14,
-        ["K"] = 13,
-        ["Q"] = 12,
-        ["J"] = 11,
-        ["T"] = 10,
-        ["9"] = 9,
-        ["8"] = 8,
-        ["7"] = 7,
-        ["6"] = 6,
-        ["5"] = 5,
-        ["4"] = 4,
-        ["3"] = 3,
-        ["2"] = 2
+        ['A'] = 14,
+        ['K'] = 13,
+        ['Q'] = 12,
+        ['J'] = 11,
+        ['T'] = 10,
+        ['9'] = 9,
+        ['8'] = 8,
+        ['7'] = 7,
+        ['6'] = 6,
+        ['5'] = 5,
+        ['4'] = 4,
+        ['3'] = 3,
+        ['2'] = 2
     };
 }
 
