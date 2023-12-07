@@ -10,11 +10,28 @@ public class TotalWinningsTest
     [InlineData("problem7.txt", 248569531L)]
     public void Given_Hands_Then_CalculatesWinnings(string file, long expectedWinnings)
     {
+        var classifier = new HandClassifier();
+
         var lines = File.ReadAllLines($"data/{file}");
         var reader = new HandReader(lines);
 
-        var sut = new TotalWinnigs(reader.Hands);
+        var sut = new TotalWinnigs(reader.Hands, classifier);
         
+        sut.Winnings.Should().Be(expectedWinnings);
+    }
+
+    [Theory]
+    [InlineData("test7.txt", 5905)]
+    [InlineData("problem7.txt", 251428428L)]
+    public void Given_HandsWithJokerRules_Then_CalculatesWinnings(string file, long expectedWinnings)
+    {
+        var classifier = new HandWithJokerClassifier();
+
+        var lines = File.ReadAllLines($"data/{file}");
+        var reader = new HandReader(lines);
+
+        var sut = new TotalWinnigs(reader.Hands, classifier);
+
         sut.Winnings.Should().Be(expectedWinnings);
     }
 }

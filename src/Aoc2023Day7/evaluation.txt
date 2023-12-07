@@ -1,15 +1,17 @@
 ﻿work log
-@17:00h - 
+@17:00h - 18:15h (part 1)
+@18:30h - 
 
 own comments
 
 own advice
+* be consistent of usage of static in classes
 
 evaluation
 
-difficulty of part 1 at first glance
-difficulty of part 2 at first glance
-difficulty
-effort
-effor (part 2)
-enjoy
+difficulty of part 1 at first glance ***
+difficulty of part 2 at first glance ***
+difficulty **
+effort ***
+effor (part 2) 
+enjoy **

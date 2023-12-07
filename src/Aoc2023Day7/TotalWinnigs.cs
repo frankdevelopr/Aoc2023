@@ -4,10 +4,11 @@ public class TotalWinnigs
 {
     public long Winnings { get; }
 
-    public TotalWinnigs(IEnumerable<Hand> hands)
+    public TotalWinnigs(IEnumerable<Hand> hands, IHandClassifier classifier)
     {
         var sorted = hands.ToList();
-        sorted.Sort();
+        var comparer = new HandComparer(classifier);
+        sorted.Sort(comparer);
 
         var result = 0L;
         for (var i = 0; i < sorted.Count; i++)
