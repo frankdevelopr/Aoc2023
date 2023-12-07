@@ -23,4 +23,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Aoc2023Day7\Aoc2023Day7.csproj" />
+  </ItemGroup>
+
 </Project>
