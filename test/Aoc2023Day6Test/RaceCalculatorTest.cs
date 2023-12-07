@@ -12,8 +12,9 @@ public class RaceCalculatorTest
     public void Given_TimeDistance_Then_ReturnsExpectedWins(int time, int targetDistance, int expectedWins)
     {
         var sut = new RaceCalculator();
+        var spec = new RaceSpec(time, targetDistance);
 
-        var wins = sut.WaysToWin(time, targetDistance);
+        var wins = sut.WaysToWin(spec);
 
         wins.Should().Be(expectedWins);
     }

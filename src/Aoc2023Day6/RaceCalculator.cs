@@ -2,7 +2,12 @@
 
 public class RaceCalculator
 {
-    public int WaysToWin(int time, int maxDistance)
+    public int WaysToWin(RaceSpec raceSpec)
+    {
+        return WaysToWin(raceSpec.Time, raceSpec.MaxDistance);
+    }
+
+    private int WaysToWin(int time, int maxDistance)
     {
         var wins = 0;
 
