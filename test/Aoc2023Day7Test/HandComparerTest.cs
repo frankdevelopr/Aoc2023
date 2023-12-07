@@ -13,12 +13,6 @@ public class HandComparerTest
     }
 
     [Fact]
-    public void Given_Data_Then_SortedAsExpected()
-    {
-
-    }
-
-    [Fact]
     public void Given_Ties_Then_JsAreWeaker()
     {
         var hand = new Hand("JKKK2", 0);

@@ -16,7 +16,7 @@ public class TotalWinningsTest
         var reader = new HandReader(lines);
 
         var sut = new TotalWinnigs(reader.Hands, classifier);
-        
+
         sut.Winnings.Should().Be(expectedWinnings);
     }
 

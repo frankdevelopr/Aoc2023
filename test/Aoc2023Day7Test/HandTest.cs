@@ -1,12 +1,13 @@
 ﻿using Aoc2023Day7;
 using FluentAssertions;
+using System.Reflection;
 
 namespace Aoc2023Day7Test;
 
 public class HandTest
 {
-    private HandComparer _comparer;
-    private HandComparer _comparerEx;
+    private readonly HandComparer _comparer;
+    private readonly HandComparer _comparerEx;
 
     public HandTest()
     {
@@ -38,8 +39,6 @@ public class HandTest
     [InlineData("AQK13")]
     public void Given_FiveKindEx_When_Compared_Then_ShouldBeBiggerThanOtherTypes(string hand)
     {
-        var classifier = new HandWithJokerClassifier();
-
         var winner = new Hand("QQQQQ", 0);
         var other = new Hand(hand, 0);
 
@@ -65,8 +64,6 @@ public class HandTest
     [InlineData("AAAAJ", "JJJJJ")]
     public void Given_CardTiesOfTypeWithJoker_When_Compared_Then_ShouldBeBiggerCard(string winnerCard, string otherCard)
     {
-        var classifier = new HandWithJokerClassifier();
-
         var winner = new Hand(winnerCard, 0);
         var other = new Hand(otherCard, 0);
 
@@ -86,8 +83,7 @@ public class HandTest
         var tie = new Hand(hand);
         var other = new Hand(hand);
 
-        // TODO
-        //tie.Should().BeRankedEquallyTo(other);
+        _comparer.Compare(tie, other).Should().Be(0);
     }
 
     [Theory]
@@ -101,12 +97,9 @@ public class HandTest
     [InlineData("JJJJJ")]
     public void Given_EqualCardsEx_When_Compared_Then_ShouldBeEqual(string hand)
     {
-        var classifier = new HandWithJokerClassifier();
-
         var tie = new Hand(hand, 0);
         var other = new Hand(hand, 0);
 
-        // TODO
-        //tie.Should().BeRankedEquallyTo(other);
+        _comparer.Compare(tie, other).Should().Be(0);
     }
 }

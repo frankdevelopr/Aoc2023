@@ -81,27 +81,7 @@ public class HandWithJokerClassifierTest
         var hand = new Hand(handText, 0);
 
         var result = _sut.Classify(hand);
-        
+
         result.Should().Be(expected);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

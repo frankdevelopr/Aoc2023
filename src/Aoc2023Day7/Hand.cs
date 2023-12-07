@@ -1,6 +1,6 @@
 ﻿namespace Aoc2023Day7;
 
-public class Hand 
+public class Hand
 {
     public string Cards { get; }
     public int Bid { get; }
