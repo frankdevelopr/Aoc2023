@@ -7,11 +7,11 @@ public class RaceCalculator
         return WaysToWin(raceSpec.Time, raceSpec.MaxDistance);
     }
 
-    private int WaysToWin(int time, int maxDistance)
+    private int WaysToWin(long time, long maxDistance)
     {
         var wins = 0;
 
-        for (var i = 1; i < time; ++i)
+        for (var i = 1L; i < time; ++i)
         {
             var speed = i;
             var timeInMovement = time - i;

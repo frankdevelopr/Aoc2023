@@ -1,6 +1,6 @@
 ﻿namespace Aoc2023Day6;
 
-public class RaceReader
+public class RaceReader : IRaceReader
 {
     public IEnumerable<RaceSpec> Races { get; } = Enumerable.Empty<RaceSpec>();
 

@@ -2,10 +2,10 @@
 
 public class RaceSpec
 {
-    public int Time { get; set; }
-    public int MaxDistance { get; set; }
+    public long Time { get; set; }
+    public long MaxDistance { get; set; }
 
-    public RaceSpec(int time, int maxDistance)
+    public RaceSpec(long time, long maxDistance)
     {
         Time = time;
         MaxDistance = maxDistance;
