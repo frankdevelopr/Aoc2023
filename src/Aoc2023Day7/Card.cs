@@ -21,7 +21,7 @@ public class Card
         return 0;
     }
 
-    private static Dictionary<char, int> ValueMapper = new Dictionary<char, int>
+    private static readonly Dictionary<char, int> ValueMapper = new()
     {
         ['A'] = 14,
         ['K'] = 13,
@@ -38,5 +38,3 @@ public class Card
         ['2'] = 2
     };
 }
-
-

@@ -32,7 +32,6 @@ public class HandTest
         winner.Should().BeGreaterThan(other);
     }
 
-
     [Theory]
     [InlineData("AAAAA")]
     [InlineData("AAAA1")]
@@ -48,5 +47,4 @@ public class HandTest
 
         tie.Should().BeRankedEquallyTo(other);
     }
-
 }
