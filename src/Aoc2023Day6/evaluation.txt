@@ -1,6 +1,6 @@
 ﻿work log
 @ 12:00h - 12:45h 45'
-@ 12:45h - 13h 15'
+@ 12:45h - 13h 15' (for part 2)
 
 own comments
 * quick solution
