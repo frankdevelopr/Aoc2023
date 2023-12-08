@@ -1,0 +1,24 @@
+﻿work log
+@17:00h - 18:15h (part 1)
+@18:30h - 20:15h (part 2)
+
+own comments
+* good move moving IComparable to IComparer (but should be done earlier)
+
+own advice
+* be consistent of usage of static in classes
+* don't go WILD coding
+* focus on details, don't trust input example data (less in AoC2003)
+* refactor and commit in smaller steps
+* make sure basic calculations are done well, before going further
+  * in this case, full house calculation was wrong
+* focus on changing parts, Hand classifier and Card value
+
+evaluation
+
+difficulty of part 1 at first glance ***
+difficulty of part 2 at first glance ***
+difficulty **
+effort ***
+effor (part 2) ****
+enjoy **
