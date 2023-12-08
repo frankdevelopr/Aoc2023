@@ -1,18 +1,21 @@
 ﻿work log
-@18:00h - 
+@18:00h - 19:05
 
 own comments
 * read directions
 * create "tree" if possible (missing nodes?)
   * or use dict of nodes node -> leftnode, rightnode (dict<string, node>)
+* work on first attempt
 
 own advice
+* don't know if I'm doing well TDD
+* using small classes make code easy and quick
 
 evaluation
 
 difficulty of part 1 at first glance ***
-difficulty of part 2 at first glance 
-difficulty 
-effort 
+difficulty of part 2 at first glance *+
+difficulty *
+effort ** (time mostly)
 effor (part 2) 
-enjoy 
+enjoy ***
