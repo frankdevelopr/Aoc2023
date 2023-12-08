@@ -2,13 +2,15 @@
 @
 
 own comments
-
+* read directions
+* create "tree" if possible (missing nodes?)
+  * or use dict of nodes node -> leftnode, rightnode (dict<string, node>)
 
 own advice
 
 evaluation
 
-difficulty of part 1 at first glance 
+difficulty of part 1 at first glance ***
 difficulty of part 2 at first glance 
 difficulty 
 effort 
