@@ -2,7 +2,8 @@
 
 public class Navigator
 {
-    private readonly string _directions;
+    public string Directions { get; }
+
     private int _current = 0;
 
     public Navigator(string directions)
@@ -10,17 +11,17 @@ public class Navigator
         if (directions.Any(c => c != 'L' && c != 'R'))
             throw new ArgumentException(nameof(directions));
 
-        _directions = directions;
+        Directions = directions;
     }
 
     public Direction Next()
     {
-        if (_current >=  _directions.Length)
+        if (_current >=  Directions.Length)
         {
             _current = 0;
         }
 
-        return ToDirection(_directions[_current++]);
+        return ToDirection(Directions[_current++]);
     }
 
     private Direction ToDirection(char direction)

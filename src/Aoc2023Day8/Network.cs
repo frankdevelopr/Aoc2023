@@ -3,18 +3,18 @@ namespace Aoc2023Day8;
 
 public class Network
 {
-    private readonly Dictionary<string, Node> _nodes = new();
+    public Dictionary<string, Node> Nodes { get; } = new();
 
     public Network Add(Node node)
     {
-        _nodes[node.Label] = node;
+        Nodes[node.Label] = node;
 
         return this;
     }
 
     public Node? Get(string label)
     {
-        if (_nodes.TryGetValue(label, out var node))
+        if (Nodes.TryGetValue(label, out var node))
         {
             return node;
         }
