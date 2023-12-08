@@ -1,4 +1,5 @@
 using Aoc2023Day8;
+using FluentAssertions;
 
 namespace Aoc2023Day8Test;
 
@@ -11,10 +12,10 @@ public class PathFinderTest
     {
         var lines = File.ReadAllLines($"data/{file}");
 
-        /*var networkReader = new NetworkReader(lines);
+        var networkReader = new NetworkReader(lines);
 
-        var sut = new PathFinder(networkReader);
+        var sut = new PathFinder(networkReader.Navigator, networkReader.Network);
 
-        sut.Steps.Should().Be(expectedSteps);*/
+        sut.Steps.Should().Be(expectedSteps);
     }
 }
