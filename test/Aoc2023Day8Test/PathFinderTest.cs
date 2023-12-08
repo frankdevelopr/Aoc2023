@@ -8,6 +8,7 @@ public class PathFinderTest
     [Theory]
     [InlineData("test.txt", 2)]
     [InlineData("test-llr.txt", 6)]
+    [InlineData("problem.txt", 15517)]
     public void Given_Network_Then_ReturnsStepsNeed(string file, int expectedSteps)
     {
         var lines = File.ReadAllLines($"data/{file}");
