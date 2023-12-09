@@ -1,4 +1,5 @@
 ﻿
+
 namespace Aoc2023Day8;
 
 public class Network
@@ -20,5 +21,15 @@ public class Network
         }
 
         return null;
+    }
+
+    public IEnumerable<Node> StartingNodes()
+    {
+        return Nodes.Values.Where(t => t.Label.EndsWith('A'));
+    }
+
+    public bool AreAllEnding(IEnumerable<Node> nodes)
+    {
+        return nodes.All(t => t.Label.EndsWith('Z'));
     }
 }

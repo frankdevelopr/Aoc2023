@@ -1,5 +1,6 @@
 ﻿work log
-@18:00h - 19:05
+@18:00h - 19:05h - part1 done
+@21:10h - 21:30h - part2
 
 own comments
 * read directions
@@ -11,11 +12,9 @@ own advice
 * don't know if I'm doing well TDD
 * using small classes make code easy and quick
 
-evaluation
+evaluation part1 / part2
 
-difficulty of part 1 at first glance ***
-difficulty of part 2 at first glance *+
-difficulty *
-effort ** (time mostly)
-effor (part 2) 
-enjoy ***
+difficulty at first glance *** / *+
+real difficulty *
+effort ** (time mostly) / *
+enjoy *** / *****

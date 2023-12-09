@@ -17,6 +17,21 @@ public class PathFinderTest
 
         var sut = new PathFinder(networkReader.Navigator, networkReader.Network);
 
-        sut.Steps.Should().Be(expectedSteps);
+        sut.Find().Should().Be(expectedSteps);
     }
+
+    [Theory]
+    [InlineData("test-multiple.txt", 6)]
+    [InlineData("problem.txt", 15517)]
+    public void Given_NetworkWithMultipleStarts_Then_ReturnsStepsNeed(string file, int expectedSteps)
+    {
+        var lines = File.ReadAllLines($"data/{file}");
+
+        var networkReader = new NetworkReader(lines);
+
+        var sut = new PathFinder(networkReader.Navigator, networkReader.Network);
+
+        sut.FindMultiple().Should().Be(expectedSteps);
+    }
+
 }
