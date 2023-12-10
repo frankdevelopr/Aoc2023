@@ -1,8 +1,4 @@
-﻿
-
-
-
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 
 namespace Aoc2023Day8;
 
@@ -24,7 +20,7 @@ public class PathFinder
 
     public long FindMultiple()
     {
-        var currents = _network.StartingNodes();
+        var currents = _network.StartingNodes().ToArray();
         var steps = 0L;
 
         while (!_network.AreAllEnding(currents))
@@ -34,7 +30,7 @@ public class PathFinder
             steps++;
 
             
-            if (steps % 1000000 == 0)
+            if (steps % 10_000_000 == 0)
             {
                 Console.WriteLine($"Steps taken so far {steps}");
             }
@@ -59,16 +55,17 @@ public class PathFinder
         return steps;
     }
 
-    private IEnumerable<Node> MoveNodes(IEnumerable<Node> currents, Direction direction)
+    private Node[] MoveNodes(Node[] currents, Direction direction)
     {
-        var next = new List<Node>();
+        //var next = new List<Node>();
 
-        foreach (var current in currents)
+        for (var i = 0; i < currents.Length; ++i)
         {
-            next.Add(MoveNext(current, direction));
+            currents[i] = MoveNext(currents[i], direction);
+            //next.Add(MoveNext(current, direction));
         }
 
-        return next;
+        return currents;
     }
     
     // TODO: Much slower

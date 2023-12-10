@@ -4,9 +4,9 @@ using System.Diagnostics;
 
 var lines = File.ReadAllLines("problem.txt");
 
-var networkReader = new NetworkReader(lines);
+var networkReader = new NetworkReaderEx(lines);
 
-var finder = new PathFinder(networkReader.Navigator, networkReader.Network);
+var finder = new PathFinderEx(networkReader.Navigator, networkReader.Network);
 
 var watcher = new Stopwatch();
 

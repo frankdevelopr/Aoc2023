@@ -33,5 +33,4 @@ public class PathFinderTest
 
         sut.FindMultiple().Should().Be(expectedSteps);
     }
-
 }
