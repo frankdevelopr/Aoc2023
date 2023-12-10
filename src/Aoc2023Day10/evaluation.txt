@@ -9,7 +9,7 @@ own comments
 
 own advice
 * maximum distance is whole distance S to S divided by 2, trying to find starting from both positions I think it would be much more difficult.
-  * alternative: start from
+  * alternative: start from both points and if already labelled stop
 
 evaluation part1 / part2
 
