@@ -1,0 +1,19 @@
+﻿TODO: 
+* Day 8 part 2 - read solution has to do with LCM (less common multiple)
+  --> solution find them all 1 by 1 and then find LCM for all of them?
+      first Z would suffice for each?
+
+work log
+
+own comments
+
+own advice
+* maximum distance is whole distance S to S divided by 2, trying to find starting from both positions I think it would be much more difficult.
+  * alternative: start from
+
+evaluation part1 / part2
+
+difficulty at first glance **** / 
+real difficulty  / 
+effort  / 
+enjoy  / 
