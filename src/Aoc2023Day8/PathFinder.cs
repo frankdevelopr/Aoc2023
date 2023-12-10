@@ -43,6 +43,61 @@ public class PathFinder
         return steps;
     }
 
+    public long FindMultipleLcm()
+    {
+        var currents = _network.StartingNodes().ToList();
+        var steps = 0L;
+        var allSteps = new List<long>();
+
+        for (var i = 0; i < currents.Count; ++i)
+        {
+            _navigator.Reset();
+            steps = 0L;
+
+            while (!_network.AreAllEnding([currents[i]]))
+            {
+                var direction = _navigator.Next();
+                currents[i] = MoveNext(currents[i], direction);
+                steps++;
+            }
+
+            allSteps.Add(steps);
+        }
+
+        var lcm = allSteps[0];
+
+        for (var i = 1; i < allSteps.Count; ++i)
+        {
+            lcm = DetermineLCM(lcm, allSteps[i]);
+        }
+
+        return lcm;
+    }
+
+    public static long DetermineLCM(long a, long b)
+    {
+        long num1, num2;
+        if (a > b)
+        {
+            num1 = a; num2 = b;
+        }
+        else
+        {
+            num1 = b; num2 = a;
+        }
+
+        for (int i = 1; i < num2; i++)
+        {
+            long mult = num1 * i;
+            if (mult % num2 == 0)
+            {
+                return mult;
+            }
+        }
+
+        return num1 * num2;
+    }
+
     private int Find(string nodeStart, string nodeEnd)
     {
         var current = _network.Get(nodeStart);

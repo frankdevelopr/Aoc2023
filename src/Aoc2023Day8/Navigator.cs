@@ -24,6 +24,11 @@ public class Navigator
         return ToDirection(Directions[_current++]);
     }
 
+    public void Reset()
+    {
+        _current = 0;
+    }
+
     private Direction ToDirection(char direction)
     {
         switch (direction)

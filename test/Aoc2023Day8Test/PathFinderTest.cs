@@ -22,8 +22,8 @@ public class PathFinderTest
 
     [Theory]
     [InlineData("test-multiple.txt", 6)]
-    [InlineData("problem.txt", 15517)]
-    public void Given_NetworkWithMultipleStarts_Then_ReturnsStepsNeed(string file, int expectedSteps)
+    [InlineData("problem.txt", 14935034899483L)]
+    public void Given_NetworkWithMultipleStarts_Then_ReturnsStepsNeed(string file, long expectedSteps)
     {
         var lines = File.ReadAllLines($"data/{file}");
 
@@ -31,7 +31,6 @@ public class PathFinderTest
 
         var sut = new PathFinder(networkReader.Navigator, networkReader.Network);
 
-        sut.FindMultiple().Should().Be(expectedSteps);
+        sut.FindMultipleLcm().Should().Be(expectedSteps);
     }
-
 }
