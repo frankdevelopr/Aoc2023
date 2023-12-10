@@ -18,4 +18,18 @@ public class PredictionSumerTest
 
         result.Should().Be(expectedSum);
    }
+
+    [Theory]
+    [InlineData("test.txt", 2)]
+    [InlineData("problem.txt", 1129L)]
+    public void Given_Histories_Then_PreviousPredictionSumAsExpected(string file, long expectedSum)
+    {
+        var lines = File.ReadAllLines($"data/{file}");
+
+        var sut = new PredictionSumer(lines);
+
+        var result = sut.SumPrevious;
+
+        result.Should().Be(expectedSum);
+   }
 }

@@ -3,15 +3,17 @@
 * Parallel execution of paths
 
 work log
-@17:15h - 
+@17:15h - 18:05h
+@19:00h - 19:15h
 
 own comments
+* not sure if lucky because no first errors, or indexes errors, but this problem was really easy and quick to solve. Maybe it is because it was for weekend? who knows...
 
 own advice
 
 evaluation part1 / part2
 
-difficulty at first glance *** /
-real difficulty /
-effort / 
-enjoy /
+difficulty at first glance *** / ***
+real difficulty *+ / +
+effort ** / *
+enjoy *** / ****

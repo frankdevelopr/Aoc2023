@@ -8,7 +8,7 @@ public class History
 {
     public List<long> Values { get; }
     public long Prediction { get; private set; }
-
+    public long PreviousPrediction { get; private set; }
 
     public History(IEnumerable<long> values)
     {
@@ -21,26 +21,33 @@ public class History
         _converging.Add(Values);
 
         Converge(_converging);
-        Prediction = Calculate(_converging);
+        Calculate(_converging);
     }
 
-    private long Calculate(List<List<long>> _converging)
+    private void Calculate(List<List<long>> _converging)
     {
         var lists = _converging.Count - 1;
 
+        var firstValue = 0L;
         var  lastValue = 0L;
 
         for (var i = lists-1; i >= 0; i--)
         {
             var currentList = _converging[i];
-            var myListItem = currentList[currentList.Count-1];
+            var myLastItem = currentList[currentList.Count-1];
             var lastListItem = _converging[i+1][_converging[i+1].Count-1];
 
-            lastValue = myListItem+lastListItem;
+            var firstItem = currentList[0];
+            var lastListFirstItem = _converging[i+1][0];
+
+            firstValue = firstItem - lastListFirstItem;
+            lastValue = myLastItem+lastListItem;
             currentList.Add(lastValue);
+            currentList.Insert(0, firstValue);
         }
 
-        return lastValue;
+        Prediction = lastValue;
+        PreviousPrediction = firstValue;
     }
 
     private void Converge(List<List<long>> converging)

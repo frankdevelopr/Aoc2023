@@ -3,6 +3,7 @@
 public class PredictionSumer
 {
     public long Sum { get; } = 0;
+    public long SumPrevious { get; } = 0;
 
     public PredictionSumer(IEnumerable<string> lines)
     {
@@ -10,15 +11,28 @@ public class PredictionSumer
 
         Process(hists);
         Sum = SumUp(hists);
+        SumPrevious = SumUpPrevious(hists);
     }
 
-    private long SumUp(IEnumerable<History> hists)
+    private static long SumUp(IEnumerable<History> hists)
     {
         var sum = 0L;
 
         foreach(var hist in hists)
         {
             sum += hist.Prediction;
+        }
+
+        return sum;
+    }
+
+    private static long SumUpPrevious(IEnumerable<History> hists)
+    {
+        var sum = 0L;
+
+        foreach(var hist in hists)
+        {
+            sum += hist.PreviousPrediction;
         }
 
         return sum;
@@ -43,8 +57,6 @@ public class PredictionSumer
             hist.Predict();
         });
     }
-
-
 
     private static List<long> Parse(string numbers)
     {
