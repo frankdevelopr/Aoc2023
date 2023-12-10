@@ -7,6 +7,7 @@ work log
 @19:00h - 19:15h
 
 own comments
+* first good usage of parallel for
 * not sure if lucky because no first errors, or indexes errors, but this problem was really easy and quick to solve. Maybe it is because it was for weekend? who knows...
 
 own advice
