@@ -1,4 +1,9 @@
-﻿work log
+﻿TODO: 
+* Day8 part 2 - precalculate if ending node on ctor
+* Parallel execution of paths
+
+work log
+@17:15h - 
 
 own comments
 

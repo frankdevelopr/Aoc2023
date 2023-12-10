@@ -1,6 +1,9 @@
+using Aoc2023Day9;
+using FluentAssertions;
+
 namespace Aoc2023Day9Test;
 
-public class PredictionSumer
+public class PredictionSumerTest
 {
     [InlineData("test.txt")]
     public void Given_Histories_Then_PredictionSumAsExpected(string file, long expectedSum)
