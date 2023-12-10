@@ -5,10 +5,12 @@ namespace Aoc2023Day9Test;
 
 public class PredictionSumerTest
 {
-    [InlineData("test.txt")]
+    [Theory]
+    [InlineData("test.txt", 114)]
+    [InlineData("problem.txt", 1934898178L)]
     public void Given_Histories_Then_PredictionSumAsExpected(string file, long expectedSum)
     {
-        var lines = File.ReadAllLines(file);
+        var lines = File.ReadAllLines($"data/{file}");
 
         var sut = new PredictionSumer(lines);
 

@@ -22,8 +22,6 @@ public class History
 
         Converge(_converging);
         Prediction = Calculate(_converging);
-
-        Prediction = Values[Values.Count-1];
     }
 
     private long Calculate(List<List<long>> _converging)
