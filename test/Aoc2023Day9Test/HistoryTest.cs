@@ -25,7 +25,6 @@ public class HistoryTest
         sut.PreviousPrediction.Should().Be(expectedValue);
     }
 
-
     public static TheoryData<long[], long, long> TestData
     {
         get

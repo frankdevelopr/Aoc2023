@@ -1,8 +1,4 @@
-﻿
-
-
-
-namespace Aoc2023Day9;
+﻿namespace Aoc2023Day9;
 
 public class History
 {
@@ -17,8 +13,10 @@ public class History
 
     public void Predict()
     {
-        var _converging = new List<List<long>>();
-        _converging.Add(Values);
+        var _converging = new List<List<long>>
+        {
+            Values
+        };
 
         Converge(_converging);
         Calculate(_converging);
@@ -34,8 +32,8 @@ public class History
         for (var i = lists-1; i >= 0; i--)
         {
             var currentList = _converging[i];
-            var myLastItem = currentList[currentList.Count-1];
-            var lastListItem = _converging[i+1][_converging[i+1].Count-1];
+            var myLastItem = currentList[^1];
+            var lastListItem = _converging[i+1][^1];
 
             var firstItem = currentList[0];
             var lastListFirstItem = _converging[i+1][0];
@@ -52,7 +50,7 @@ public class History
 
     private void Converge(List<List<long>> converging)
     {
-        var lastCalculation = converging[converging.Count-1];
+        var lastCalculation = converging[^1];
 
         while (!Converged(lastCalculation))
         {
@@ -61,7 +59,7 @@ public class History
         }
     }
 
-    private List<long> GenerateDiffs(List<long> lastCalculation)
+    private static List<long> GenerateDiffs(List<long> lastCalculation)
     {
         var lastItem = lastCalculation.Count - 1;
         var nextCalc = new List<long>(lastItem);
@@ -75,8 +73,8 @@ public class History
         return nextCalc;
     }
 
-    private bool Converged(List<long> list)
+    private static bool Converged(List<long> list)
     {
-        return list.All(t => t == 0);
+        return list.TrueForAll(t => t == 0);
     }
 }

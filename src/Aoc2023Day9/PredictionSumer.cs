@@ -14,6 +14,32 @@ public class PredictionSumer
         SumPrevious = SumUpPrevious(hists);
     }
 
+    private static List<History> Parse(IEnumerable<string> lines)
+    {
+        var lists = new List<History>();
+
+        foreach (var line in lines)
+        {
+            lists.Add(new History(Parse(line)));
+        }
+
+        return lists;
+    }
+
+    private static List<long> Parse(string numbers)
+    {
+        var parsed = numbers.Trim().Split(" ")
+            .Where(t => !string.IsNullOrEmpty(t))
+            .Select(i => long.Parse(i.Trim()));
+
+        return parsed.ToList();
+    }
+
+    private static void Process(IEnumerable<History> hists)
+    {
+        Parallel.ForEach(hists, hist => hist.Predict());
+    }
+
     private static long SumUp(IEnumerable<History> hists)
     {
         var sum = 0L;
@@ -36,34 +62,5 @@ public class PredictionSumer
         }
 
         return sum;
-    }
-
-    private IEnumerable<History> Parse(IEnumerable<string> lines)
-    {
-        var lists = new List<History>();
-
-        foreach (var line in lines)
-        {
-            lists.Add(new History(Parse(line)));
-        }
-
-        return lists;
-    }
-
-    private void Process(IEnumerable<History> hists)
-    {
-        Parallel.ForEach(hists, hist =>
-        {
-            hist.Predict();
-        });
-    }
-
-    private static List<long> Parse(string numbers)
-    {
-        var parsed = numbers.Trim().Split(" ")
-            .Where(t => !string.IsNullOrEmpty(t))
-            .Select(i => long.Parse(i.Trim()));
-
-        return parsed.ToList();
     }
 }
