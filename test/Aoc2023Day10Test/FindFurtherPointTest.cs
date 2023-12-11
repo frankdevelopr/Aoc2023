@@ -1,6 +1,6 @@
 namespace Aoc2023Day10Test;
 
-public class UnitTest1
+public class FindFurtherPointTest
 {
     [Fact]
     public void Test1()
