@@ -1,19 +1,19 @@
 ﻿namespace Aoc2023Day8;
 
-public class NetworkReader
+public class NetworkReaderEx
 {
     public Navigator Navigator { get;}
-    public Network Network { get; }
+    public NetworkEx Network { get; }
 
-    public NetworkReader(string[] lines)
+    public NetworkReaderEx(string[] lines)
     {
         Navigator = new Navigator(lines[0].Trim());
         Network = BuildNetwork(lines);
     }
 
-    private Network BuildNetwork(string[] lines)
+    private NetworkEx BuildNetwork(string[] lines)
     {
-        var network = new Network();
+        var network = new NetworkEx();
 
         for (var i = 2; i < lines.Length; i++)
         {
@@ -22,7 +22,12 @@ public class NetworkReader
             var label = parts[0].Trim();
             ParseDirections(parts[1], out var left, out var right);
 
-            network.Add(new Node(label, left, right));
+            var baseNode = network.GetOrCreate(label);
+            var rightNode = network.GetOrCreate(right);
+            var leftNode = network.GetOrCreate(left);
+
+            baseNode.Right = rightNode;
+            baseNode.Left = leftNode;
         }
 
         return network;

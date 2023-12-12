@@ -7,6 +7,7 @@ own comments
 * create "tree" if possible (missing nodes?)
   * or use dict of nodes node -> leftnode, rightnode (dict<string, node>)
 * work on first attempt
+* I think 2nd part is working ok but it's brute force algorithm that takes ages, taking a look at reddit it says to use LCM (Less Common Multiple to find the solution)
 
 own advice
 * don't know if I'm doing well TDD
