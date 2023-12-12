@@ -32,6 +32,20 @@ public class UniverseTest
         result.Should().HaveCount(galaxies);
     }
 
+    [Theory]
+    [InlineData("test.txt", 374)]
+    [InlineData("problem.txt", 9403026L)]
+    public void Given_Universe_Then_GalaxyDistanceAsExpected(string file, long distance)
+    {
+        var lines = Read(file);
+
+        var sut = new Universe(lines);
+
+        var result = sut.ShortestPath;
+
+        result.Should().Be(distance);
+    }
+
     public static string[] Read(string file)
     {
         return File.ReadAllLines($"data/{file}");

@@ -4,16 +4,36 @@ namespace Aoc2023Day11;
 
 public class Universe
 {
-    private static char EmptySpace = '.';
-    private static char Galaxy = '#';
+    private static readonly char EmptySpace = '.';
+    private static readonly char Galaxy = '#';
 
     public string[] Expanded { get; }
     public IEnumerable<Galaxy> Galaxies { get; }
+    public long ShortestPath { get; }
 
     public Universe(string[] lines)
     {
         Expanded = Expand(lines);
         Galaxies = FindGalaxies();
+        ShortestPath = FindShortestPath();
+    }
+
+    private long FindShortestPath()
+    {
+        var galaxies = Galaxies.ToArray();
+        var distance = 0L;
+
+        for (var i = 0; i < galaxies.Length; ++i)
+        {
+            var coords = galaxies[i].Coordinates;
+
+            for (var j = i+1; j < galaxies.Length; ++j)
+            {
+                distance += coords.DistanceTo(galaxies[j].Coordinates);
+            }
+        }
+
+        return distance;
     }
 
     private IEnumerable<Galaxy> FindGalaxies()
@@ -25,7 +45,7 @@ public class Universe
         {
             for (var x = 0; x < Expanded[y].Length; ++x)
             {
-                if (isGalaxy(Expanded[y][x]))
+                if (IsGalaxy(Expanded[y][x]))
                 {
                     galaxies.Add(new Galaxy(galaxyNumber++, new Coordinates(y,x)));
                 }
@@ -35,7 +55,7 @@ public class Universe
         return galaxies;
     }
 
-    private bool isGalaxy(char point)
+    private static bool IsGalaxy(char point)
     {
         return point == Galaxy;
     }
@@ -50,7 +70,7 @@ public class Universe
         return expanded;
     }
 
-    private string[] DoExpansion(string[] lines, IEnumerable<int> emptyRows, IEnumerable<int> emptyColumns)
+    private static string[] DoExpansion(string[] lines, IEnumerable<int> emptyRows, IEnumerable<int> emptyColumns)
     {
         var expanded = new string[lines.Length + emptyRows.Count()];
 
@@ -73,7 +93,7 @@ public class Universe
 
             expanded[targetRow] = rowCreator.ToString();
             targetRow++;
-            
+
             if (emptyRows.Contains(y))
             {
                 expanded[targetRow++] = new string(EmptySpace, rowCreator.Length);
@@ -89,13 +109,18 @@ public class Universe
 
         for (var i = 0; i < lines.Length; i++)
         {
-            if (lines[i].All(c => c == EmptySpace))
+            if (lines[i].All(IsEmptySpace))
             {
                 empty.Add(i);
             }
         }
 
         return empty;
+    }
+
+    private bool IsEmptySpace(char arg)
+    {
+        return arg == EmptySpace;
     }
 
     private IEnumerable<int> FindEmptyColumns(string[] lines)

@@ -1,12 +1,14 @@
 ﻿work log
-@ worked 1h
+@ worked <2h in part 1
 
 own comments
+* probably expanding universe as in first part, won't work (let's try, it's easy)
+* probably the calculation should be done when measuring distances (providing universes between)
 
 own advice
 
 evaluation                part1 / part2
-difficulty (1st glance):  ***+  /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  ***+  / *****
+real difficulty:          **    /
+effort:                   **    /
+enjoy:                    **** (all worked at first try) /
