@@ -1,0 +1,21 @@
+﻿work log
+@18:00h - 19:05h - part1 done
+@21:10h - 21:30h - part2
+
+own comments
+* read directions
+* create "tree" if possible (missing nodes?)
+  * or use dict of nodes node -> leftnode, rightnode (dict<string, node>)
+* work on first attempt
+* I think 2nd part is working ok but it's brute force algorithm that takes ages, taking a look at reddit it says to use LCM (Less Common Multiple to find the solution)
+
+own advice
+* don't know if I'm doing well TDD
+* using small classes make code easy and quick
+
+evaluation part1 / part2
+
+difficulty at first glance *** / *+
+real difficulty *
+effort ** (time mostly) / *
+enjoy *** / *****
