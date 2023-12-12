@@ -4,9 +4,11 @@
       first Z would suffice for each?
 
 work log
-@18:30h - 
+@18:30h - 19:20h
+@19:30h - 20:45h
 
 own comments
+TODO: part 1 solved but it doesn't always should start at east, so fix it. See TODO comments.
 
 own advice
 * maximum distance is whole distance S to S divided by 2, trying to find starting from both positions I think it would be much more difficult.
@@ -14,7 +16,7 @@ own advice
 
 evaluation part1 / part2
 
-difficulty at first glance **** / 
-real difficulty  / 
-effort  / 
-enjoy  / 
+difficulty at first glance **** / ***** (not sure how to deal with it)
+real difficulty *** / algorithm? just find a way to calculate when there is an enclosure?
+effort ***** / 
+enjoy *** / 

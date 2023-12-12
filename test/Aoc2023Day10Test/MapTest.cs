@@ -17,6 +17,19 @@ public class MapTest
         map.StartPosition.Should().BeEquivalentTo(new Position(x, y));
     }
 
+    [Theory]
+    [InlineData("test.txt", 8)]
+    [InlineData("test-2.txt", 16)]
+    [InlineData("problem.txt", 13936L)]
+    public void Given_ValidMap_When_Navigating_Then_ReturnsAllStepes(string file, int steps)
+    {
+        var lines = Read(file);
+
+        var map = new Map(lines);
+
+        map.Steps.Should().Be(steps);
+    }
+
     public string[] Read(string file)
     {
         return File.ReadAllLines($"data/{file}");

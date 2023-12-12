@@ -10,6 +10,7 @@ public class FindFarthestPointTest
     [InlineData("test-dirty.txt", 4)]
     [InlineData("test-2.txt", 8)]
     [InlineData("test-2-dirty.txt", 8)]
+    [InlineData("problem.txt", 6968L)]
     public void Given_ValidMaps_Returns_ExpectedFarthestPoint(string file, long expectedDistance)
     {
         var lines = Read(file);

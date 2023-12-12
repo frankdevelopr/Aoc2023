@@ -11,6 +11,8 @@ public class FindFarthestPoint
 
     public long Find()
     {
-        throw new NotImplementedException();
+        var map = new Map(_lines);
+
+        return map.Steps / 2;
     }
 }
