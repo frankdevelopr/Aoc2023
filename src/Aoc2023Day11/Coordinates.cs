@@ -10,4 +10,9 @@ public class Coordinates
         Y = y;
         X = x;
     }
+
+    public int DistanceTo(Coordinates other)
+    {
+        return Math.Abs(Y - other.Y) + Math.Abs(X - other.X);
+    }
 }
