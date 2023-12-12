@@ -34,7 +34,6 @@ public class UniverseNaiveTest
         result.Should().BeEquivalentTo(expand);
     }
 
-
     [Theory]
     [InlineData("test.txt", 9)]
     public void Given_Universe_Then_GalaxyCountAsExpected(string file, int galaxies)
@@ -77,7 +76,6 @@ public class UniverseNaiveTest
 
         result.Should().Be(distance);
     }
-
 
     public static string[] Read(string file)
     {

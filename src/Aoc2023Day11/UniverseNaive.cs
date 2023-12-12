@@ -4,8 +4,8 @@ namespace Aoc2023Day11;
 
 public class UniverseNaive
 {
-    private static readonly char EmptySpace = '.';
-    private static readonly char Galaxy = '#';
+    private const char EmptySpace = '.';
+    private const char Galaxy = '#';
 
     public int ExpansionFactor { get; }
     public string[] Expanded { get; }

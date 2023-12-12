@@ -11,7 +11,7 @@ public class Coordinates
         X = x;
     }
 
-    public int DistanceTo(Coordinates other)
+    public long DistanceTo(Coordinates other)
     {
         return Math.Abs(Y - other.Y) + Math.Abs(X - other.X);
     }

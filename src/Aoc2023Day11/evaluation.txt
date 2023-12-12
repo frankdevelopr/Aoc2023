@@ -7,9 +7,11 @@ own comments
 * probably the calculation should be done when measuring distances (providing universes between)
 
 own advice
+* priority of operators! 
+  expansions * (ExpansionFactor - 1) != expansions * ExpansionFactor - 1 
 
 evaluation                part1 / part2
 difficulty (1st glance):  ***+  / ****
-real difficulty:          *+    /
-effort:                   **    /
-enjoy:                    **** (all worked at first try) /
+real difficulty:          *+    / * (just index or previous added, redo the problem)
+effort:                   **    / **
+enjoy:                    **** (all worked at first try) / ****

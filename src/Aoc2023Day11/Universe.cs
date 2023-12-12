@@ -4,16 +4,22 @@ namespace Aoc2023Day11;
 
 public class Universe
 {
-    private static readonly char EmptySpace = '.';
-    private static readonly char Galaxy = '#';
+    private const char EmptySpace = '.';
+    private const char Galaxy = '#';
 
-    public string[] Expanded { get; }
+    private List<int> _cosmicExpansionRows;
+    private List<int> _cosmicExpansionColumns;
+
+    public int ExpansionFactor { get; }
+    public string[] Map { get; }
     public IEnumerable<Galaxy> Galaxies { get; }
     public long ShortestPath { get; }
 
-    public Universe(string[] lines)
+    public Universe(string[] lines, int expansionFactor = 2)
     {
-        Expanded = Expand(lines);
+        ExpansionFactor = expansionFactor;
+        Map = lines;
+        VirtualExpansion();
         Galaxies = FindGalaxies();
         ShortestPath = FindShortestPath();
     }
@@ -25,15 +31,47 @@ public class Universe
 
         for (var i = 0; i < galaxies.Length; ++i)
         {
-            var coords = galaxies[i].Coordinates;
-
             for (var j = i+1; j < galaxies.Length; ++j)
             {
-                distance += coords.DistanceTo(galaxies[j].Coordinates);
+                distance += CalculateDistance(galaxies[i], galaxies[j]);
             }
         }
 
         return distance;
+    }
+
+    public long DistanceBetween(int galaxyFrom, int galaxyTo)
+    {
+        var from = Galaxies.Single(g => g.Number == galaxyFrom);
+        var to = Galaxies.Single(g => g.Number == galaxyTo);
+
+        return CalculateDistance(from, to);
+    }
+
+    private long CalculateDistance(Galaxy from, Galaxy to)
+    {
+        var fromCoords = from.Coordinates;
+        var toCoords = to.Coordinates;
+
+        var distance = fromCoords.DistanceTo(toCoords);
+        var expansions = CountExpansions(fromCoords, toCoords);
+
+        // empty space already counted this is why we substract one
+        distance += expansions * (ExpansionFactor - 1);
+
+        return distance;
+    }
+
+    private long CountExpansions(Coordinates fromCoords, Coordinates toCoords)
+    {
+        var rows = _cosmicExpansionRows.Count(t => t > Math.Min(fromCoords.Y, toCoords.Y)
+                    && t < Math.Max(fromCoords.Y, toCoords.Y));
+        var cols = _cosmicExpansionColumns.Count(t => t > Math.Min(fromCoords.X, toCoords.X)
+                    && t < Math.Max(fromCoords.X, toCoords.X));
+
+        var cosmicsExpansions = rows + cols;
+
+        return cosmicsExpansions;
     }
 
     private IEnumerable<Galaxy> FindGalaxies()
@@ -41,11 +79,11 @@ public class Universe
         var galaxies = new List<Galaxy>();
         var galaxyNumber = 1;
 
-        for (var y = 0; y < Expanded.Length; ++y)
+        for (var y = 0; y < Map.Length; ++y)
         {
-            for (var x = 0; x < Expanded[y].Length; ++x)
+            for (var x = 0; x < Map[y].Length; ++x)
             {
-                if (IsGalaxy(Expanded[y][x]))
+                if (IsGalaxy(Map[y][x]))
                 {
                     galaxies.Add(new Galaxy(galaxyNumber++, new Coordinates(y,x)));
                 }
@@ -60,19 +98,15 @@ public class Universe
         return point == Galaxy;
     }
 
-    private string[] Expand(string[] lines)
+    private void VirtualExpansion()
     {
-        var emptyRows = FindEmptyRows(lines);
-        var emptyColumns = FindEmptyColumns(lines);
-
-        var expanded = DoExpansion(lines, emptyRows, emptyColumns);
-
-        return expanded;
+        _cosmicExpansionRows = FindEmptyRows();
+        _cosmicExpansionColumns = FindEmptyColumns();
     }
 
-    private static string[] DoExpansion(string[] lines, IEnumerable<int> emptyRows, IEnumerable<int> emptyColumns)
+    private static string[] DoExpansion(string[] lines, IEnumerable<int> emptyRows, IEnumerable<int> emptyColumns, int expansionFactor)
     {
-        var expanded = new string[lines.Length + emptyRows.Count()];
+        var expanded = new string[lines.Length -emptyRows.Count() + (emptyRows.Count() * expansionFactor)];
 
         var targetRow = 0;
 
@@ -83,11 +117,11 @@ public class Universe
             for (var x = 0; x < lines[0].Length; ++x)
             {
                 var c = lines[y][x];
-
                 rowCreator.Append(c);
+
                 if (emptyColumns.Contains(x))
                 {
-                    rowCreator.Append(EmptySpace);
+                    rowCreator.Append(EmptySpace, expansionFactor - 1);
                 }
             }
 
@@ -96,20 +130,23 @@ public class Universe
 
             if (emptyRows.Contains(y))
             {
-                expanded[targetRow++] = new string(EmptySpace, rowCreator.Length);
+                for (var expandDown = 1; expandDown < expansionFactor; ++expandDown)
+                {
+                    expanded[targetRow++] = new string(EmptySpace, rowCreator.Length);
+                }
             }
         }
 
         return expanded;
     }
 
-    private IEnumerable<int> FindEmptyRows(string[] lines)
+    private List<int> FindEmptyRows()
     {
         var empty = new List<int>();
 
-        for (var i = 0; i < lines.Length; i++)
+        for (var i = 0; i < Map.Length; i++)
         {
-            if (lines[i].All(IsEmptySpace))
+            if (Map[i].All(IsEmptySpace))
             {
                 empty.Add(i);
             }
@@ -123,15 +160,15 @@ public class Universe
         return arg == EmptySpace;
     }
 
-    private IEnumerable<int> FindEmptyColumns(string[] lines)
+    private List<int> FindEmptyColumns()
     {
         var empty = new List<int>();
 
-        for (var x = 0; x < lines[0].Length; ++x)
+        for (var x = 0; x < Map[0].Length; ++x)
         {
             var isEmpty = true;
 
-            foreach (var line in lines)
+            foreach (var line in Map)
             {
                 isEmpty = line[x] == EmptySpace;
                 if (!isEmpty)
