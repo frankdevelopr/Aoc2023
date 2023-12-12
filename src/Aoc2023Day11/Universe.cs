@@ -8,10 +8,36 @@ public class Universe
     private static char Galaxy = '#';
 
     public string[] Expanded { get; }
+    public IEnumerable<Galaxy> Galaxies { get; }
 
     public Universe(string[] lines)
     {
         Expanded = Expand(lines);
+        Galaxies = FindGalaxies();
+    }
+
+    private IEnumerable<Galaxy> FindGalaxies()
+    {
+        var galaxies = new List<Galaxy>();
+        var galaxyNumber = 1;
+
+        for (var y = 0; y < Expanded.Length; ++y)
+        {
+            for (var x = 0; x < Expanded[y].Length; ++x)
+            {
+                if (isGalaxy(Expanded[y][x]))
+                {
+                    galaxies.Add(new Galaxy(galaxyNumber++, new Coordinates(y,x)));
+                }
+            }
+        }
+
+        return galaxies;
+    }
+
+    private bool isGalaxy(char point)
+    {
+        return point == Galaxy;
     }
 
     private string[] Expand(string[] lines)
@@ -97,6 +123,4 @@ public class Universe
 
         return empty;
     }
-
-
 }

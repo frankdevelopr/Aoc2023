@@ -19,6 +19,19 @@ public class UniverseTest
         result.Should().BeEquivalentTo(expand);
     }
 
+    [Theory]
+    [InlineData("test.txt", 9)]
+    public void Given_Universe_Then_GalaxyCountAsExpected(string file, int galaxies)
+    {
+        var lines = Read(file);
+
+        var sut = new Universe(lines);
+
+        var result = sut.Galaxies;
+
+        result.Should().HaveCount(galaxies);
+    }
+
     public static string[] Read(string file)
     {
         return File.ReadAllLines($"data/{file}");
