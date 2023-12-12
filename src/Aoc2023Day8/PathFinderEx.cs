@@ -22,7 +22,6 @@ public class PathFinderEx
             MoveNodes(currents, direction);
             steps++;
 
-            
             if (steps % 10_000_000 == 0)
             {
                 Console.WriteLine($"Steps taken so far {steps}");
