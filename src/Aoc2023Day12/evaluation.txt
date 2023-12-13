@@ -5,12 +5,13 @@ own comments
 * count group position -> 2^n for combinations
   * when no group defined, how to break?
 * Instead of regex not reused, try using groups (#+) and then get matches
+* Brute force worked but too slow - all combinations tested, 18s of test execution
 
 own advice
 * 1st understand well the problem, start from easy examples
 
 evaluation                part1 / part2
-difficulty (1st glance):  ***** /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  ***** / ***** (redo the solution to avoid brute force)
+real difficulty:          ** (brute force) /
+effort:                   *** (code not cleaned up) /
+enjoy:                    ** /
