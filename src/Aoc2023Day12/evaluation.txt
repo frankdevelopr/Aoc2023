@@ -6,6 +6,8 @@ own comments
   * when no group defined, how to break?
 * Instead of regex not reused, try using groups (#+) and then get matches
 * Brute force worked but too slow - all combinations tested, 18s of test execution
+  * improved to 3s with parallel and some optimizations, but not enough for unfolded
+  * FIND A HEURISTIC! or a good algorithm!
 
 own advice
 * 1st understand well the problem, start from easy examples

@@ -1,4 +1,6 @@
-﻿namespace Aoc2023Day12;
+﻿using System.Text;
+
+namespace Aoc2023Day12;
 
 public class SpringRow
 {
@@ -13,5 +15,27 @@ public class SpringRow
     {
         Spring = spring;
         Groups = groups.ToList();
+    }
+
+    public SpringRow Unfold(int factor = 5)
+    {
+        var b = new StringBuilder(Spring);
+        b.Append('?');
+        b.Append(Spring);
+        b.Append('?');
+        b.Append(Spring);
+        b.Append('?');
+        b.Append(Spring);
+        b.Append('?');
+        b.Append(Spring);
+
+
+        var groups = new List<int>(Groups);
+        groups.AddRange(Groups);
+        groups.AddRange(Groups);
+        groups.AddRange(Groups);
+        groups.AddRange(Groups);
+
+        return new SpringRow(b.ToString(), groups);
     }
 }
