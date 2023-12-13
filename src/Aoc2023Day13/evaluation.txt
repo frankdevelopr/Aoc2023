@@ -1,0 +1,13 @@
+﻿work log
+
+own comments
+* find equal lines to search the center and the analyze the others
+  * then if needed compare others to see if they in fact are mirrors
+
+own advice
+
+evaluation                part1 / part2
+difficulty (1st glance):  *** (not sure if I understood the whole problem) /
+real difficulty:                /
+effort:                         /
+enjoy:                          /
