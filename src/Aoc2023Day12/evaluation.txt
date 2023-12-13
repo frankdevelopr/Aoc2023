@@ -1,7 +1,10 @@
 ﻿work log
+@8:15h
 
 own comments
-
+* count group position -> 2^n for combinations
+  * when no group defined, how to break?
+* Instead of regex not reused, try using groups (#+) and then get matches
 
 own advice
 * 1st understand well the problem, start from easy examples
