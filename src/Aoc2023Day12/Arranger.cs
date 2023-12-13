@@ -23,17 +23,15 @@ public class Arranger
         var replacements = _generator.Combinations(unknowns);
         var good = 0;
 
-        foreach (var replace in replacements)
-        {
-            var replaced = Replace(springs, replace);
+        var finder = new SolutionFinder(groups);
 
-            good += SpringRow.IsSolution(replaced, groups) ? 1 : 0;
-        }
+        var allPossibleSprings = replacements.AsParallel().Select(r => Replace(springs, r));
+        good = finder.CountSolutions(allPossibleSprings);
 
         return good;
     }
 
-    private string Replace(string springs, string replace)
+    private static string Replace(string springs, string replace)
     {
         var replaced = new StringBuilder();
         var current = 0;

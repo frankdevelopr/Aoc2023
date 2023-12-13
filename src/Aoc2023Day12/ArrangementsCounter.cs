@@ -1,10 +1,8 @@
-﻿
-
-namespace Aoc2023Day12;
+﻿namespace Aoc2023Day12;
 
 public class ArrangementsCounter
 {
-    private string[] _lines;
+    private readonly string[] _lines;
     private readonly Arranger _arranger;
 
     public IEnumerable<SpringRow> SpringRows { get; }

@@ -3,7 +3,7 @@ using FluentAssertions;
 
 namespace Aoc2023Day12Test;
 
-public class SpringRowTest
+public class SolutionFinderTests
 {
     [Theory]
     [InlineData("#", "1")]
@@ -17,7 +17,9 @@ public class SpringRowTest
     {
         var groups = Parse(groupsTxt);
 
-        var result = SpringRow.IsSolution(springRow, groups);
+        var finder = new SolutionFinder(groups);
+
+        var result = finder.IsSolution(springRow);
 
         result.Should().BeTrue();
     }
@@ -31,3 +33,4 @@ public class SpringRowTest
         return parsed.ToList();
     }
 }
+
