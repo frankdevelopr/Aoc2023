@@ -1,13 +1,29 @@
 ﻿work log
+1h or so for part 1
 
 own comments
+part 1
 * find equal lines to search the center and the analyze the others
   * then if needed compare others to see if they in fact are mirrors
 
+* happy though: reduce columns and rows to numbers, then much less operations to be done, right?
+  * value for each column needs not not overlap, position is important for comparison
+
+Values # = 1, . = 0, 2^n starting from left
+
+#.##..##. e.g. -> 1 + 4 + 8 + 64 + 128 
+..#.##.#.
+##......#
+for column, [0] = 1 + 4 = 5
+
+part2
+* the smudge should be just one digit or position so with current implementation I need to test for column and row values if p1 == p2 or |p1 - p2| = 2^n if so, equal them and proceed
+
 own advice
+* is this idea reusable to other problems in Aoc? maybe the combinations one?
 
 evaluation                part1 / part2
-difficulty (1st glance):  *** (not sure if I understood the whole problem) /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  *** (not sure if I understood the whole problem) / **** (probably easier with current solution)
+real difficulty:          *+ (because of happy thought) / 
+effort:                   * / 
+enjoy:                    ***** / 
