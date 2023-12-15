@@ -1,7 +1,7 @@
 ﻿starting to be exhausted trying to keep to current day
 
 work log
-@17:30h - 
+@17:30h - 18:30h for part 1
 
 own comments
 * rocks need to move from position to other position most (north in this case)
@@ -11,11 +11,12 @@ own comments
 * rocks only stop when found other rocks
 * rocks # don't move but are stoppers
 * weight is length - current row
+part 1 working at first attempt :D
 
 own advice
 
 evaluation                part1 / part2
-difficulty (1st glance):  ***+  /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  ***+  / *+ or *****+ (depending on performance issues)
+real difficulty:          *     /
+effort:                   **+ (time) /
+enjoy:                    **** / 

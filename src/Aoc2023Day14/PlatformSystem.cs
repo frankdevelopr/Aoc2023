@@ -1,4 +1,5 @@
-﻿namespace Aoc2023Day14;
+﻿
+namespace Aoc2023Day14;
 
 public class PlatformSystem
 {
@@ -17,5 +18,10 @@ public class PlatformSystem
         var loadCalculator = new LoadCalculator(tilt.ToArray());
 
         return loadCalculator.Calculate();
+    }
+
+    public object Cycle(long cycles)
+    {
+        throw new NotImplementedException();
     }
 }
