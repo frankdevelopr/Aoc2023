@@ -18,6 +18,11 @@ for column, [0] = 1 + 4 = 5
 
 part2
 * the smudge should be just one digit or position so with current implementation I need to test for column and row values if p1 == p2 or |p1 - p2| = 2^n if so, equal them and proceed
+  * note the smudge can be of non-consecutive lines but same distance from reflection line (fuck!)
+
+I think I'm closer but probably there is problem on finding spot (for whatever reason), probably because of the update of values.
+Analyze patterns were next == previous || next == 0.
+Add more tests for finding spots and FixRows/FixColumns.
 
 own advice
 * is this idea reusable to other problems in Aoc? maybe the combinations one?

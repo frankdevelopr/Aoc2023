@@ -32,4 +32,29 @@ public class MultipleMirrorFinder
 
         return results.Sum();
     }
+
+    public long CalculateSmudge()
+    {
+        var results = new ConcurrentBag<long>();
+
+        foreach (var pattern in Patterns)
+        {
+            var inlines = pattern.Split(Environment.NewLine);
+
+            var finder = new MirrorFinder(inlines);
+
+            results.Add(finder.FindSmudge());
+        }
+
+        /*Parallel.ForEach(Patterns, pattern =>
+        {
+            var inlines = pattern.Split(Environment.NewLine);
+
+            var finder = new MirrorFinder(inlines);
+
+            results.Add(finder.FindSmudge());
+        });*/
+
+        return results.Sum();
+    }
 }

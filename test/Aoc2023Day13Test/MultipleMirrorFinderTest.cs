@@ -16,4 +16,17 @@ public class MultipleMirrorFinderTest
 
         finder.Calculate().Should().Be(expectedValue);
     }
+
+    [Theory]
+    [InlineData("data/test.txt", 400)]
+    // 20508L too low, 24999L too low, 33299L too high, debug 1 by 1 and see
+    [InlineData("data/problem.txt", 24999L)]
+    public void Given_MutiplePatterns_Then_SmudgeCalculationAsExpected(string file, long expectedValue)
+    {
+        var lines = File.ReadAllText(file);
+
+        var finder = new MultipleMirrorFinder(lines);
+
+        finder.CalculateSmudge().Should().Be(expectedValue);
+    }
 }

@@ -44,4 +44,44 @@ public class MirrorFinderTest
 
         sut.Find().Should().Be(400);
     }
+
+    [Fact]
+    public void Given_SmudgePatternMirror_Then_FindsMirror()
+    {
+        const string pattern = """
+            #.##..##.
+            ..#.##.#.
+            ##......#
+            ##......#
+            ..#.##.#.
+            ..##..##.
+            #.#.##.#.
+            """;
+
+        var inlines = pattern.Split(Environment.NewLine);
+
+        var sut = new MirrorFinder(inlines);
+
+        sut.FindSmudge().Should().Be(300);
+    }
+
+    [Fact]
+    public void Given_SmudgePatternWithHorizontalMirror_Then_FindsMirror()
+    {
+        const string pattern = """
+            #...##..#
+            #....#..#
+            ..##..###
+            #####.##.
+            #####.##.
+            ..##..###
+            #....#..#
+            """;
+
+        var inlines = pattern.Split(Environment.NewLine);
+
+        var sut = new MirrorFinder(inlines);
+
+        sut.FindSmudge().Should().Be(100);
+    }
 }

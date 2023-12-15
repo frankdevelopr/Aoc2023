@@ -1,0 +1,103 @@
+﻿Buggy code
+
+Previous value 700, next value 700, real 700
+Previous value 1200, next value 500, real 500
+Previous value 2, next value 102, real 100
+Previous value 12, next value 6, real 6
+* Previous value 1, next value 1, real 1
+* Previous value 5, next value 5, real 5
+* Previous value 1, next value 1, real 1
+* Previous value 500, next value 0, real 0
+Previous value 1200, next value 600, real 600
+Previous value 1600, next value 700, real 700
+Previous value 16, next value 8, real 8
+Previous value 1300, next value 200, real 200
+Previous value 800, next value 100, real 100
+* Previous value 600, next value 600, real 600
+* Previous value 4, next value 4, real 4
+Previous value 10, next value 710, real 700
+* Previous value 100, next value 100, real 100
+Previous value 10, next value 5, real 5
+Previous value 12, next value 2, real 2
+Previous value 1200, next value 1213, real 13
+Previous value 15, next value 715, real 700
+* Previous value 6, next value 6, real 6
+Previous value 6, next value 306, real 300
+Previous value 4, next value 1304, real 1300
+Previous value 1400, next value 700, real 700
+* Previous value 800, next value 0, real 0
+* Previous value 11, next value 11, real 11
+Previous value 15, next value 2, real 2
+Previous value 500, next value 100, real 100
+* Previous value 300, next value 300, real 300
+* Previous value 100, next value 100, real 100
+Previous value 11, next value 5, real 5
+Previous value 12, next value 6, real 6
+* Previous value 100, next value 100, real 100
+* Previous value 300, next value 0, real 0
+* Previous value 400, next value 400, real 400
+Previous value 2, next value 902, real 900
+Previous value 1100, next value 300, real 300
+Previous value 3, next value 103, real 100
+Previous value 3, next value 103, real 100
+* Previous value 5, next value 5, real 5
+Previous value 1200, next value 300, real 300
+Previous value 800, next value 100, real 100
+Previous value 1500, next value 1516, real 16
+* Previous value 800, next value 800, real 800
+* Previous value 300, next value 300, real 300
+* Previous value 1100, next value 0, real 0
+Previous value 1200, next value 100, real 100
+* Previous value 1, next value 1, real 1
+* Previous value 1, next value 1, real 1
+Previous value 13, next value 1613, real 1600
+Previous value 9, next value 4, real 4
+Previous value 800, next value 801, real 1
+Previous value 2, next value 302, real 300
+* Previous value 4, next value 0, real 0
+* Previous value 1100, next value 1100, real 1100
+Previous value 16, next value 8, real 8
+* Previous value 13, next value 13, real 13
+Previous value 800, next value 804, real 4
+Previous value 1600, next value 400, real 400
+* Previous value 1100, next value 1100, real 1100
+Previous value 2, next value 602, real 600
+Previous value 6, next value 106, real 100
+* Previous value 900, next value 0, real 0
+* Previous value 1, next value 0, real 0
+Previous value 7, next value 107, real 100
+Previous value 400, next value 400, real 400
+* Previous value 3, next value 3, real 3
+Previous value 200, next value 206, real 6
+* Previous value 1, next value 1, real 1
+Previous value 400, next value 404, real 4
+Previous value 1, next value 601, real 600
+* Previous value 5, next value 0, real 0
+* Previous value 8, next value 8, real 8
+* Previous value 300, next value 0, real 0
+Previous value 10, next value 110, real 100
+* Previous value 200, next value 0, real 0
+Previous value 900, next value 901, real 1
+Previous value 1000, next value 1009, real 9
+* Previous value 1400, next value 1400, real 1400
+* Previous value 600, next value 600, real 600
+Previous value 16, next value 116, real 100
+* Previous value 2, next value 2, real 2
+* Previous value 1, next value 1, real 1
+* Previous value 7, next value 7, real 7
+* Previous value 600, next value 0, real 0
+Previous value 1000, next value 400, real 400
+Previous value 1000, next value 500, real 500
+Previous value 8, next value 8, real 8
+Previous value 13, next value 6, real 6
+* Previous value 1, next value 1, real 1
+Previous value 10, next value 1110, real 1100
+* Previous value 800, next value 800, real 800
+Previous value 1200, next value 1210, real 10
+* Previous value 2, next value 2, real 2
+Previous value 10, next value 1010, real 1000
+Previous value 1200, next value 500, real 500
+Previous value 300, next value 302, real 2
+* Previous value 500, next value 500, real 500
+* Previous value 200, next value 200, real 200
+Final result 24999
