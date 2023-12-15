@@ -1,0 +1,25 @@
+﻿TODO: For group combinations day , use combinatory numbers not all possibilities
+https://es.wikipedia.org/wiki/Combinatoria
+f = n! / (r! * (n-r)!)
+https://stackoverflow.com/questions/5132758/how-can-i-create-all-possible-combinations-for-a-set-of-words-without-repetition <-- try to do it yourself (!)
+
+
+work log
+@8:15h
+
+own comments
+* count group position -> 2^n for combinations
+  * when no group defined, how to break?
+* Instead of regex not reused, try using groups (#+) and then get matches
+* Brute force worked but too slow - all combinations tested, 18s of test execution
+  * improved to 3s with parallel and some optimizations, but not enough for unfolded
+  * FIND A HEURISTIC! or a good algorithm!
+
+own advice
+* 1st understand well the problem, start from easy examples
+
+evaluation                part1 / part2
+difficulty (1st glance):  ***** / ***** (redo the solution to avoid brute force)
+real difficulty:          ** (brute force) /
+effort:                   *** (code not cleaned up) /
+enjoy:                    ** /
