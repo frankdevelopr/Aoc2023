@@ -1,4 +1,5 @@
-﻿namespace Aoc2023Day14;
+﻿
+namespace Aoc2023Day14;
 
 public class PlatformTilt
 {
@@ -14,6 +15,11 @@ public class PlatformTilt
         _platform = platform.ToArray();
         _height = _platform.Length;
         _width = _platform[0].Length;
+    }
+
+    public IEnumerable<string> Cycle(long cycles)
+    {
+        return TiltNorth();
     }
 
     public IEnumerable<string> TiltNorth()
@@ -58,4 +64,6 @@ public class PlatformTilt
     {
         return pos == RoundedRock;
     }
+
+    
 }
