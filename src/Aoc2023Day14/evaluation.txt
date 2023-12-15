@@ -10,6 +10,7 @@ own comments
   * maybe it can be optimized to avoid recalculating all lines again
 * rocks only stop when found other rocks
 * rocks # don't move but are stoppers
+* weight is length - current row
 
 own advice
 
