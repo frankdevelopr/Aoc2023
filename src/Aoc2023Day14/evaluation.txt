@@ -1,0 +1,20 @@
+﻿starting to be exhausted trying to keep to current day
+
+work log
+@17:30h - 
+
+own comments
+* rocks need to move from position to other position most (north in this case)
+  * i assume for part 2, it can be to other coordinates 
+* for moving rocks, note that on each move, they add space to others and so on
+  * maybe it can be optimized to avoid recalculating all lines again
+* rocks only stop when found other rocks
+* rocks # don't move but are stoppers
+
+own advice
+
+evaluation                part1 / part2
+difficulty (1st glance):  ***+  /
+real difficulty:                /
+effort:                         /
+enjoy:                          /
