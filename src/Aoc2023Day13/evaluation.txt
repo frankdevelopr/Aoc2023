@@ -24,6 +24,15 @@ I think I'm closer but probably there is problem on finding spot (for whatever r
 Analyze patterns were next == previous || next == 0.
 Add more tests for finding spots and FixRows/FixColumns.
 
+Fix reason 1, try
+Then fix reason 2, if it is a real reason
+
+Reasons
+1. Probably what is happening, is that we stop on first find, so no chance to find newer lines after first found. --> For cases where next == previous
+  New approach find different than row or column == Find(int col, int row), if equal solution continue.
+**2. When 0? Are them a real problem or just ok? Ensure differences are only in 1 row, no more than 1 smudge.
+
+
 own advice
 * is this idea reusable to other problems in Aoc? maybe the combinations one?
 

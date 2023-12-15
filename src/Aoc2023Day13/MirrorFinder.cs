@@ -104,6 +104,7 @@ public class MirrorFinder
                     {
                         EqualCols(prev, i);
                     }
+                    var pattern = string.Join('\n', _pattern);
 
                     //_pattern[coord1][coord2] = _pattern[i][coord2];
 
