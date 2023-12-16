@@ -14,14 +14,23 @@ public class PlatformSystem
 
     public long Calculate()
     {
-        var tilt = _platformTilt.TiltNorth();
+        _platformTilt.TiltNorth();
+
+        return CalculateInternal();
+    }
+
+    public long Cycle(long cycles)
+    {
+        _platformTilt.Cycle(cycles);
+
+        return CalculateInternal();
+    }
+
+    public long CalculateInternal()
+    {
+        var tilt = _platformTilt.Platform;
         var loadCalculator = new LoadCalculator(tilt.ToArray());
 
         return loadCalculator.Calculate();
-    }
-
-    public object Cycle(long cycles)
-    {
-        throw new NotImplementedException();
     }
 }

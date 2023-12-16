@@ -14,23 +14,23 @@ public class PlatformTiltTest
         var expected = File.ReadAllLines(expectedFile);
 
         var sut = new PlatformTilt(platform.Select(p => p.ToArray()));
-        var result = sut.TiltNorth();
+        sut.TiltNorth();
 
-        result.Should().BeEquivalentTo(expected);
+        sut.Platform.Should().BeEquivalentTo(expected);
     }
 
     [Theory]
     [InlineData("data/test.txt", 1, "data/test-1cycle.txt")]
-    //[InlineData("data/test.txt", 2, "data/test-2cycles.txt")]
-    //[InlineData("data/test.txt", 3, "data/test-3cycles.txt")]
+    [InlineData("data/test.txt", 2, "data/test-2cycles.txt")]
+    [InlineData("data/test.txt", 3, "data/test-3cycles.txt")]
     public void Given_Platform_When_Cycled_Then_ReturnExpectedPlatform(string file, long cycles, string expectedFile)
     {
         var platform = File.ReadAllLines(file);
         var expected = File.ReadAllLines(expectedFile);
 
         var sut = new PlatformTilt(platform.Select(p => p.ToArray()));
-        var result = sut.Cycle(cycles);
+        sut.Cycle(cycles);
 
-        result.Should().BeEquivalentTo(expected);
+        sut.Platform.Should().BeEquivalentTo(expected);
     }
 }

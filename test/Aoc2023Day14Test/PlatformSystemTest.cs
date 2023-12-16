@@ -18,7 +18,7 @@ public class PlatformSystemTest
     }
 
     [Theory]
-    [InlineData("data/test-load.txt", 64, 1000000000L)]
+    [InlineData("data/test.txt", 64, 1000000000L)]
     //[InlineData("data/problem.txt", 109424L, 1000000000L)]
     public void Given_ValidPlatform_When_Cycles_Then_ReturnsExpectedLoad(string file, long expectedLoad, long cycles)
     {

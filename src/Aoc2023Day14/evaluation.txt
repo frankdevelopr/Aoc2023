@@ -13,6 +13,9 @@ own comments
 * weight is length - current row
 part 1 working at first attempt :D
 
+part2 too slow, without any parallelization on release mode
+*** Cycles result is 64 after 1000000000 iterations (took 00:09:48.2532852)
+
 own advice
 
 evaluation                part1 / part2
