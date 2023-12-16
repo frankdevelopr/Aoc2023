@@ -30,8 +30,8 @@ public class PlatformSystemTest
     }
 
     [Theory]
-    [InlineData("data/test.txt", 64, 1000000000L, Skip = "for a while")]
-    //[InlineData("data/problem.txt", 109424L, 1000000000L)]
+    [InlineData("data/test.txt", 64, 1000000000L, Skip = "will take hours")]
+    [InlineData("data/problem.txt", 102509L, 1000000000L, Skip = "will take hours")]
     public void Given_ValidPlatform_When_Cycles_Then_ReturnsExpectedLoad(string file, long expectedLoad, long cycles)
     {
         var lines = File.ReadAllLines(file);

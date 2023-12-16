@@ -2,11 +2,11 @@
 using Aoc2023Day14;
 using System.Diagnostics;
 
-var lines = File.ReadAllLines("problem.txt");
-var it = 10_000_000L;
-var platform = lines.Select(p => p.ToArray());
+
+CycleThemAll();
+
 //DoSomething("PlatformSystem", it, () => new PlatformTilt(platform));
-DoSomething("Ex version", it, () => new PlatformTiltEx(platform));
+//DoSomething("Ex version", it, () => new PlatformTiltEx(platform));
 
 void DoSomething(string name, long it, Func<IPlatformTilt> value)
 {
@@ -25,21 +25,39 @@ void DoSomething(string name, long it, Func<IPlatformTilt> value)
     watcher.Stop();
     Console.WriteLine($"Calculate for {name} after {it} iterations (took {watcher.Elapsed})");
 }
-/*
-//var lines = File.ReadAllLines("test.txt");
-var lines = File.ReadAllLines("problem.txt");
 
-Console.WriteLine("Read platform");
-Console.WriteLine(lines);
+void CycleThemAll()
+{
+    var lines = File.ReadAllLines("problem.txt");
+    //var lines = File.ReadAllLines("test.txt");
 
-var sut = new PlatformSystem(lines);
+    //Console.WriteLine("Read platform");
+    //Console.WriteLine(lines);
 
-var watcher = new Stopwatch();
+    var sut = new PlatformSystem(lines);
 
-watcher.Start();
-var it = 1000000000L;
-var result = sut.Cycle(it);
-watcher.Stop();
+    var watcher = new Stopwatch();
 
-Console.WriteLine($"Cycles result is {result} after {it} iterations (took {watcher.Elapsed})");
-*/
+    watcher.Start();
+    var it = 1000_000_000L;
+
+    var top = 10_000_000L;
+    for (var i = 0; i < top; ++i)
+    {
+        var result = sut.Cycle(1_000_000);
+        Console.WriteLine($"{result} after {(i+1)*1_000_000} iterations (took {watcher.Elapsed})");
+        //Console.WriteLine($"{result} after {i} iterations (took {watcher.Elapsed})");
+        //Console.WriteLine(result);
+
+        //if (i > 200 && it % i == 0)
+        if (i % 1_000_000L == 0)
+        {
+            Console.WriteLine($"{result} after {i} iterations (took {watcher.Elapsed})");
+            //Console.WriteLine(result);
+        }
+    }
+
+    watcher.Stop();
+
+    //Console.WriteLine($"Cycles result is {result} after {it} iterations (took {watcher.Elapsed})");
+}

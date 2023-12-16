@@ -18,12 +18,18 @@ part2 too slow, without any parallelization on release mode
 
 results for TiltNorth() 10M 
   --> old implementation 2' 6"
-  --> new 1' 32" (parallel for)
+  --> new 1' 32" (parallel for) --> for 1000M and 4 directions, it would took ~10h
   --> new 2' 32" (non-parallel)
 
 new ideas
 1. after each cycle calculate value, I assume there should be a cycle (same pattern) or it may converge 
 2. find a better algorithm, idea try to avoid locate always RoundedRocks (another list of rounded with their position?)
+
+solution provided (but not programmed)
+Outputed results for each cycle, and find that there is a cycle of period 9 (after it converged)
+pos1 = 102509,102505,102500,102498,102507,102504,102497,102507,pos9 = 102512 (not sure which value started the cycle, don't care too much)
+After N cycles of calculation, with the pattern, take the position of that lets call it posReference
+resultPosition = (1000M cycles - N) % 9 + posReference
 
 own advice
 brute force again or almost
@@ -35,6 +41,6 @@ alternative for each direction
 
 evaluation                part1 / part2
 difficulty (1st glance):  ***+  / *+ or *****+ (depending on performance issues)
-real difficulty:          *     /
-effort:                   **+ (time) /
-enjoy:                    **** / 
+real difficulty:          *     / ***
+effort:                   **+ (time) / *****
+enjoy:                    **** / **+

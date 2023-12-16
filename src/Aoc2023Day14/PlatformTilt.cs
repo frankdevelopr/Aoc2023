@@ -27,10 +27,10 @@ public class PlatformTilt : IPlatformTilt
             TiltSouth();
             TiltEast();
 
-            if (i % 10_000_000 == 0)
+            /*if (i % 10_000_000 == 0)
             {
                 Console.WriteLine($"Cycles done {i}");
-            }
+            }*/
         }
     }
 
