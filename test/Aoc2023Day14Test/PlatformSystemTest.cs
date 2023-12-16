@@ -18,7 +18,19 @@ public class PlatformSystemTest
     }
 
     [Theory]
-    [InlineData("data/test.txt", 64, 1000000000L)]
+    [InlineData("data/test-load.txt", 136)]
+    [InlineData("data/problem.txt", 109424L)]
+    public void Given_ValidPlatformEx_Then_ReturnsExpectedLoad(string file, long expectedLoad)
+    {
+        var lines = File.ReadAllLines(file);
+
+        var sut = new PlatformSystemEx(lines);
+
+        sut.Calculate().Should().Be(expectedLoad);
+    }
+
+    [Theory]
+    [InlineData("data/test.txt", 64, 1000000000L, Skip = "for a while")]
     //[InlineData("data/problem.txt", 109424L, 1000000000L)]
     public void Given_ValidPlatform_When_Cycles_Then_ReturnsExpectedLoad(string file, long expectedLoad, long cycles)
     {

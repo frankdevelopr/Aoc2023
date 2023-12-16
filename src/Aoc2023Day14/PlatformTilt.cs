@@ -1,7 +1,6 @@
-﻿
-namespace Aoc2023Day14;
+﻿namespace Aoc2023Day14;
 
-public class PlatformTilt
+public class PlatformTilt : IPlatformTilt
 {
     private readonly char[][] _platform;
     private readonly int _height;

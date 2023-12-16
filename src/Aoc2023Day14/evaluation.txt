@@ -16,7 +16,22 @@ part 1 working at first attempt :D
 part2 too slow, without any parallelization on release mode
 *** Cycles result is 64 after 1000000000 iterations (took 00:09:48.2532852)
 
+results for TiltNorth() 10M 
+  --> old implementation 2' 6"
+  --> new 1' 32" (parallel for)
+  --> new 2' 32" (non-parallel)
+
+new ideas
+1. after each cycle calculate value, I assume there should be a cycle (same pattern) or it may converge 
+2. find a better algorithm, idea try to avoid locate always RoundedRocks (another list of rounded with their position?)
+
 own advice
+brute force again or almost
+alternative for each direction 
+  calculate stoppers (just once for each direction) 
+    (note on given row can be more than one: several # and edges of array)
+  for each 0 until each stopper
+  switch 0 to "++stopper"
 
 evaluation                part1 / part2
 difficulty (1st glance):  ***+  / *+ or *****+ (depending on performance issues)

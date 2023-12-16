@@ -1,14 +1,14 @@
 ﻿namespace Aoc2023Day14;
 
-public class PlatformSystem : IPlatformSystem
+public class PlatformSystemEx : IPlatformSystem
 {
-    private readonly PlatformTilt _platformTilt;
+    private readonly PlatformTiltEx _platformTilt;
 
-    public PlatformSystem(string[] lines)
+    public PlatformSystemEx(string[] lines)
     {
         var platform = lines.Select(p => p.ToArray());
 
-        _platformTilt = new PlatformTilt(platform);
+        _platformTilt = new PlatformTiltEx(platform);
     }
 
     public long Calculate()
@@ -18,12 +18,12 @@ public class PlatformSystem : IPlatformSystem
         return CalculateInternal();
     }
 
-    public long Cycle(long cycles)
+    /*public long Cycle(long cycles)
     {
-        _platformTilt.Cycle(cycles);
+        //_platformTilt.Cycle(cycles);
 
         return CalculateInternal();
-    }
+    }*/
 
     public long CalculateInternal()
     {
@@ -31,5 +31,10 @@ public class PlatformSystem : IPlatformSystem
         var loadCalculator = new LoadCalculator(tilt.ToArray());
 
         return loadCalculator.Calculate();
+    }
+
+    public long Cycle(long cycles)
+    {
+        throw new NotImplementedException();
     }
 }
