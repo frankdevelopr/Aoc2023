@@ -1,4 +1,4 @@
-
+using Aoc2023Day15;
 using FluentAssertions;
 
 namespace Aoc2023Day15Test;
@@ -14,13 +14,5 @@ public class HashSumerTest
         var sut = new HashSumer();
 
         sut.Sum(line).Should().Be(expected);
-    }
-}
-
-public class HashSumer
-{
-    public long Sum(string line)
-    {
-        throw new NotImplementedException();
     }
 }
