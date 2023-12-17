@@ -1,0 +1,14 @@
+﻿work log
+
+own comments
+* follow all paths (can be done in parallel when splitting)
+* problem -> detect ends, there should be cycles, how to detect them easily
+* calculation of reflection in each edge or mirror
+
+own advice
+
+evaluation                part1 / part2
+difficulty (1st glance):  ****  /
+real difficulty:                /
+effort:                         /
+enjoy:                          /
