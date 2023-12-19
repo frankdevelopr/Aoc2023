@@ -1,0 +1,27 @@
+﻿work log
+several hours, 3 or 4 I estimate just for first part
+
+own comments
+* follow all paths (can be done in parallel when splitting)
+* problem -> detect ends, there should be cycles, how to detect them easily
+* calculation of reflection in each edge or mirror
+* I'm proud it works on "first" attempt
+* Using parallel again
+
+own advice
+* review arrays in c#, jagged and multidimensional or how create them
+  * and how are they traversed
+  * review IEnumerable<T>[][]
+* code can be more consistent, tiles, coords used or not, [][] vs [,]
+* reduce memory print?
+* review string operations to remove chars etc
+* review creation of layout
+* add cycle detector counter
+  * review locks and how to add values (or a counter) in a shared var
+
+
+evaluation                part1 / part2
+difficulty (1st glance):  ****  / ** (may it work with "brute" force? I think so, not so many combinations)
+real difficulty:          ***   / * (test run in 11 minutes, 9 minutes on release)
+effort:                   ****  / *
+enjoy:                    ***** / ***
