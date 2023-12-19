@@ -1,11 +1,18 @@
 ﻿work log
 
 own comments
+* extremely difficult IMHO
+  * restrictions of move at most 3 times same direction
+  * you can go further from your destination
+  * naive approach (which don't fit current solution for test.txt) 
+    is trying to go to the smallest next number
+* with brute force how many paths? o_X
 
 own advice
 
+
 evaluation                part1 / part2
-difficulty (1st glance):        /
+difficulty (1st glance):  ****** / 
 real difficulty:                /
 effort:                         /
 enjoy:                          /
