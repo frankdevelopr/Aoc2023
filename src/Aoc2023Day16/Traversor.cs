@@ -54,7 +54,7 @@ public class Traversor
         return paint.ToString();
     }
 
-    private void TraverseFrom(int y, int x, Direction goingTo)
+    public void TraverseFrom(int y, int x, Direction goingTo)
     {
         if (HasBeenVisitedFrom(y, x, goingTo))
         {

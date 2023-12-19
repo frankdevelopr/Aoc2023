@@ -16,10 +16,12 @@ own advice
 * reduce memory print?
 * review string operations to remove chars etc
 * review creation of layout
+* add cycle detector counter
+  * review locks and how to add values (or a counter) in a shared var
 
 
 evaluation                part1 / part2
 difficulty (1st glance):  ****  / ** (may it work with "brute" force? I think so, not so many combinations)
-real difficulty:          ***   /
-effort:                   ****  /
-enjoy:                    ***** /
+real difficulty:          ***   / * (test run in 11 minutes, 9 minutes on release)
+effort:                   ****  / *
+enjoy:                    ***** / ***
