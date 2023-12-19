@@ -1,11 +1,26 @@
 ﻿work log
 
 own comments
+in/out
+* same problem in/out, how to find it easily? 
+  * count walls or lines traversed? even or 0 out, odd in
+  * but consider edges themselves, how they should be counted? as 1? avoid them?
+* another approach
+  * just find an easy point in (i.e. don't calculate all points if in or out), then fill in all directions, including diagonals
+  * and stop if wall is found
+
+dimensions/starting point
+* since we can move in all directions, maybe we'd need to:
+  1. find the size of the trench
+  2. find the location of starting point so we can move always in (topmost and bottom most point)
+
+* approach 2. grow dinamically (still using char[,])
+
 
 own advice
 
 evaluation                part1 / part2
-difficulty (1st glance):        /
+difficulty (1st glance):  ***** /
 real difficulty:                /
 effort:                         /
 enjoy:                          /
