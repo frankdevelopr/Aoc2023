@@ -1,4 +1,5 @@
 ﻿work log
+@~2h
 
 own comments
 in/out
