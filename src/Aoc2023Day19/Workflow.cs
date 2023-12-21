@@ -1,4 +1,5 @@
-﻿namespace Aoc2023Day19;
+﻿
+namespace Aoc2023Day19;
 
 public class Workflow
 {
