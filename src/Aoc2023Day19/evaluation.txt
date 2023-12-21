@@ -1,8 +1,16 @@
 ﻿work log
+@0:30h
 
 own comments
+* https://github.com/dotnet/roslyn/blob/main/docs/wiki/Scripting-API-Samples.md#parameter
+* c# can eval some code https://stackoverflow.com/questions/53844/how-can-i-evaluate-a-c-sharp-expression-dynamically
+* https://matheval.org/math-expression-eval-for-c-sharp/
+* https://github.com/dynamicexpresso/DynamicExpresso
+* https://github.com/ncalc/ncalc
 
 own advice
+* TODO: learn https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/
+
 
 evaluation                part1 / part2
 difficulty (1st glance):  ***+  /
