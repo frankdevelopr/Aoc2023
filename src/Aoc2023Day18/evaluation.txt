@@ -26,9 +26,10 @@ own advice
 part 2 outofmemory exception (I should have seen that before)
 approaches:
 * optimal: find the algorithm
+* algorithm using graphs?
 * approach 1: use a canvas and then count, just paint, then count (outofmemory again?)
 * approach 2: calculate gcd (mcd in spanish) for each dimension and add each position a weight, then do the maths (not sure if feasible)
-* approach 3: instead of single positions use cubes or rectangles (~ approach 2)
+* approach 3: instead of single positions use cubes or rectangles (~ approach 2) shape?
 
 
 evaluation                part1 / part2
