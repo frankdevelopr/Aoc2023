@@ -1,11 +1,32 @@
 ﻿work log
+@~4h or so for part 1
 
 own comments
+in/out
+* same problem in/out, how to find it easily? 
+  * count walls or lines traversed? even or 0 out, odd in
+  * but consider edges themselves, how they should be counted? as 1? avoid them?
+* another approach
+  * just find an easy point in (i.e. don't calculate all points if in or out), then fill in all directions, including diagonals
+  * and stop if wall is found
+
+* recursion is always tricky, usually iteration is much better
+  * got stackoverflow exception, left as commented code. this is why I hate recursion, loop are faster and less error prone.
+
+dimensions/starting point
+* since we can move in all directions, maybe we'd need to:
+  1. find the size of the trench
+  2. find the location of starting point so we can move always in (topmost and bottom most point)
+
+* approach 2. grow dinamically (still using char[,])
 
 own advice
+* utils project should be added long ago, reuse it as much as possible and move some code there
+
+
 
 evaluation                part1 / part2
-difficulty (1st glance):        /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  ***** / *+ (once again depending if current solution performs well)
+real difficulty:          ***   / 
+effort:                   ****  /
+enjoy:                    ***** (paint results is funny) / 
