@@ -12,7 +12,7 @@ public class Rule
         _nextWorkflow = nextWorkflow;
     }
 
-    public Rule(Condition condition, string nextWorkflow) : this(nextWorkflow)
+    public Rule(string nextWorkflow, Condition condition) : this(nextWorkflow)
     {
         _condition = condition;
     }
