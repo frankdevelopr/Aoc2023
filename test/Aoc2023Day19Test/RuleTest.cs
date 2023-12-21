@@ -35,5 +35,4 @@ public class RuleTest
 
         sut.Eval(_part).Should().BeNull();
     }
-
 }

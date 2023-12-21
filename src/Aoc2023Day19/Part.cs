@@ -6,6 +6,7 @@ public class Part
     public long M { get; set; }
     public long A { get; set; }
     public long S { get; set; }
+    public long Rating { get; }
 
     public Part(long x, long m, long a, long s)
     {
@@ -13,5 +14,7 @@ public class Part
         M = m;
         A = a;
         S = s;
+
+        Rating = x + m + a + s;
     }
 }
