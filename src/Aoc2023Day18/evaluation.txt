@@ -23,6 +23,12 @@ dimensions/starting point
 own advice
 * utils project should be added long ago, reuse it as much as possible and move some code there
 
+part 2 outofmemory exception (I should have seen that before)
+approaches:
+* optimal: find the algorithm
+* approach 1: use a canvas and then count, just paint, then count (outofmemory again?)
+* approach 2: calculate gcd (mcd in spanish) for each dimension and add each position a weight, then do the maths (not sure if feasible)
+* approach 3: instead of single positions use cubes or rectangles (~ approach 2)
 
 
 evaluation                part1 / part2

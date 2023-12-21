@@ -6,8 +6,8 @@ public class Trench
 {
     private readonly TrenchSize _trenchSpecs;
     private readonly char[,] _layout;
-    private readonly int _height;
-    private readonly int _width;
+    private readonly long _height;
+    private readonly long _width;
 
     public long Perimeter { get; private set; }
     public long Size { get; private set; }

@@ -2,8 +2,8 @@
 
 public class TrenchSize
 {
-    public int Height { get; private set; }
-    public int Width { get; private set; }
+    public long Height { get; private set; }
+    public long Width { get; private set; }
     public Position InitialPosition { get; private set; }
     public List<Instruction> Instructions { get; }
 

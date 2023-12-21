@@ -2,10 +2,10 @@
 
 public class Position
 {
-    public int Y { get; }
-    public int X { get; }
+    public long Y { get; }
+    public long X { get; }
 
-    public Position(int y, int x)
+    public Position(long y, long x)
     {
         Y = y; 
         X = x;

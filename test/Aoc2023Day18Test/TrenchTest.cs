@@ -6,8 +6,9 @@ namespace Aoc2023Day18Test;
 public class TrenchTest
 {
     [Theory]
-    [InlineData("data/test.txt", 62L)]
-    [InlineData("data/problem.txt", 40714L)]
+    [InlineData("data/test.txt", 952408144115L)]
+    //[InlineData("data/test.txt", 62L)]
+    //[InlineData("data/problem.txt", 40714L)]
     public void Given_ValidTrenchInstructions_Then_SizeIsWellCalculated(string file, long size)
     {
         var lines = File.ReadAllLines(file);
