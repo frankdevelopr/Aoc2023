@@ -2,8 +2,6 @@
 
 public class Rule
 {
-    
-    // TODO: IsAccepted(), IsRejected() here or in Workflow
     private readonly string _nextWorkflow;
     private readonly Condition? _condition;
 
@@ -19,7 +17,7 @@ public class Rule
 
     public string? Eval(Part part)
     {
-        if (_condition == null) 
+        if (_condition == null)
         {
             return _nextWorkflow;
         }

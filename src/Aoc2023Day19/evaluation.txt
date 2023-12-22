@@ -1,5 +1,6 @@
 ﻿work log
-@0:30h
+@0:30h 
+@2h
 
 own comments
 * https://github.com/dotnet/roslyn/blob/main/docs/wiki/Scripting-API-Samples.md#parameter
@@ -8,12 +9,18 @@ own comments
 * https://github.com/dynamicexpresso/DynamicExpresso
 * https://github.com/ncalc/ncalc
 
+worked at first attemps once again (lucky me), finally didn't use any parsing
+
 own advice
 * TODO: learn https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/expression-trees/
 
+462.000.000.000 out of 256.000.000.000.000 in 11:30h --> 265 days of calculation
+1.000.000.000 every 2' at most 
+
+* brute force won't work again, find another way, analyzing/reducing workflows
 
 evaluation                part1 / part2
-difficulty (1st glance):  ***+  /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  ***+  / * or ******
+real difficulty:          **    / ******
+effort:                   ***** (too many parsing) / 
+enjoy:                    ***   /

@@ -21,7 +21,6 @@ public class WorkflowSystem
         {
             var workflow = Workflows[workflowName];
             workflowName = workflow.Eval(part);
-
         } while (!IsEnd(workflowName));
 
         return workflowName == Accepted;
