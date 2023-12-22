@@ -3,9 +3,11 @@
 own comments
 
 own advice
+* need to be very cautious with order, use queues?
+
 
 evaluation                part1 / part2
-difficulty (1st glance):        /
+difficulty (1st glance):  **** /
 real difficulty:                /
 effort:                         /
 enjoy:                          /
