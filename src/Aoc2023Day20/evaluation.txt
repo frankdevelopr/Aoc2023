@@ -6,7 +6,7 @@ own comments
   * receive just add message to queue of processing
   * process send to others and process others (2 loops for ordering)
 
-* doesn't work, need to review BFS
+* doesn't work, need to review BFS?
   * it is not process by level (in order) but in depth
   * add while loop in broadcaster and messages? should every module return its next modules?
 
