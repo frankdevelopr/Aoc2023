@@ -36,9 +36,9 @@ public abstract class PulseSender
             module.Receive(pulse, this as IPulseReceiver);
         }
 
-        foreach (var module in _outputs)
+        /*foreach (var module in _outputs)
         {
             module.Process();
-        }
+        }*/
     }
 }

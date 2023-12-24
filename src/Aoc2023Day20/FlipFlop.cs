@@ -13,13 +13,13 @@ public class FlipFlop : PulseSender, IPulseReceiver
         base.Receive(pulse);
     }
 
-    public void Process()
+    public IList<IPulseReceiver> Process()
     {
         var pulse = PendingPulses.Dequeue();
 
         if (pulse == Pulse.High)
         {
-            return;
+            return new List<IPulseReceiver>();
         }
 
         if (Status == Status.Off)
@@ -33,6 +33,6 @@ public class FlipFlop : PulseSender, IPulseReceiver
             SendOthers(Pulse.Low);
         }
 
-        //ProcessOthers();
+        return _outputs;
     }
 }

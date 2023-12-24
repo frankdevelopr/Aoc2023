@@ -63,6 +63,7 @@ public class ButtonModuleTest
 
         br.Connect(a);
         a.Connect(inv).Connect(con);
+        // TODO: Connect inv with its inputs
         inv.Connect(b);
         b.Connect(con);
         con.Connect(output);

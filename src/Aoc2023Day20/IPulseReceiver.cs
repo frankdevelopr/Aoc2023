@@ -4,5 +4,5 @@ public interface IPulseReceiver
 {
     string Name { get;}
     void Receive(Pulse pulse, IPulseReceiver? sender);
-    void Process();
+    IList<IPulseReceiver> Process();
 }

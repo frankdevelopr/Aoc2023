@@ -22,6 +22,7 @@ public class ButtonSystem
     public void Push(int pushed)
     {
         _initiator.Receive(Pulse.Low, null);
+        _initiator.Process();
     }
 
 

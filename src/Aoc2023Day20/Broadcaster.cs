@@ -6,9 +6,29 @@ public class Broadcaster : PulseSender, IPulseReceiver
     {
     }
 
-    public void Process()
+    public IList<IPulseReceiver> Process()
     {
+        var pending = new Queue<IPulseReceiver>();
+        foreach (var output in _outputs)
+            pending.Enqueue(output);
+
+        while (pending.Count > 0)
+        {
+            var next = pending.Dequeue();
+
+            var nextOutputs = next.Process();
+
+            foreach (var output in nextOutputs)
+                pending.Enqueue(output);
+        }
+
+        return new List<IPulseReceiver>();
+
         // Do nothing
+        // while (messages)
+        // { var next = Process() -> list of next?
+        //   add(next)
+        // }
     }
 
     public void Receive(Pulse pulse, IPulseReceiver? sender)

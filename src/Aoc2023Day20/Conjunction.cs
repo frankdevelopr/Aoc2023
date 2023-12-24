@@ -1,4 +1,5 @@
-﻿namespace Aoc2023Day20;
+﻿
+namespace Aoc2023Day20;
 
 public class Conjunction : PulseSender, IPulseReceiver
 {
@@ -20,7 +21,7 @@ public class Conjunction : PulseSender, IPulseReceiver
         Receive(pulse);
     }
 
-    public void Process()
+    public void ProcessInt()
     {
         PendingPulses.Dequeue();
 
@@ -32,5 +33,12 @@ public class Conjunction : PulseSender, IPulseReceiver
         {
             SendOthers(Pulse.Low);
         }
+    }
+
+    public IList<IPulseReceiver> Process()
+    {
+        ProcessInt();
+
+        return _outputs;
     }
 }
