@@ -14,11 +14,11 @@ public class ConjunctionTest
 
     public ConjunctionTest()
     {
-        _input = new FlipFlop();
-        _input2 = new FlipFlop();
+        _input = new FlipFlop("input");
+        _input2 = new FlipFlop("_input2");
         _output = new Mock<IPulseReceiver>();
 
-        _sut = new Conjunction();
+        _sut = new Conjunction("sut");
         _sut.RegisterInput(_input);
         _sut.RegisterInput(_input2);
         _sut.Connect(_output.Object);
@@ -28,6 +28,7 @@ public class ConjunctionTest
     public void Given_Conjunction_When_AnyModulesLow_Then_SendHigh()
     {
         _sut.Receive(Pulse.High, _input);
+        _sut.Process();
 
         _output.Verify(t => t.Receive(Pulse.High, _sut), Times.Once());
     }
@@ -36,8 +37,10 @@ public class ConjunctionTest
     public void Given_Conjunction_When_AllModulesHigh_Then_SendLow()
     {
         _sut.Receive(Pulse.High, _input);
+        _sut.Process();
         _output.Invocations.Clear();
         _sut.Receive(Pulse.High, _input2);
+        _sut.Process();
 
         _output.Verify(t => t.Receive(Pulse.Low, _sut), Times.Once());
     }
@@ -46,9 +49,12 @@ public class ConjunctionTest
     public void Given_Conjunction_When_AllModulesHighAndBackOneLow_Then_SendHigh()
     {
         _sut.Receive(Pulse.High, _input);
+        _sut.Process();
         _sut.Receive(Pulse.High, _input2);
+        _sut.Process();
         _output.Invocations.Clear();
         _sut.Receive(Pulse.Low, _input);
+        _sut.Process();
 
         _output.Verify(t => t.Receive(Pulse.High, _sut), Times.Once());
     }

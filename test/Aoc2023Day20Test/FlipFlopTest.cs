@@ -9,7 +9,7 @@ public class FlipFlopTest
     [Fact]
     public void Given_FlipFlop_When_Created_Then_StatusIsOff()
     {
-        var sut = new FlipFlop();
+        var sut = new FlipFlop("sut");
 
         sut.Status.Should().Be(Status.Off);
     }
@@ -19,10 +19,11 @@ public class FlipFlopTest
     {
         var target = new Mock<IPulseReceiver>();
 
-        var sut = new FlipFlop();
+        var sut = new FlipFlop("sut");
         sut.Connect(target.Object);
 
         sut.Receive(Pulse.Low, null);
+        sut.Process();
         sut.Status.Should().Be(Status.On);
 
         target.Verify(t => t.Receive(Pulse.High, sut), Times.Once());
@@ -33,12 +34,14 @@ public class FlipFlopTest
     {
         var target = new Mock<IPulseReceiver>();
 
-        var sut = new FlipFlop();
+        var sut = new FlipFlop("sut");
         sut.Receive(Pulse.Low, null);
+        sut.Process();
         sut.Status.Should().Be(Status.On);
 
         sut.Connect(target.Object);
         sut.Receive(Pulse.Low, null);
+        sut.Process();
         sut.Status.Should().Be(Status.Off);
         target.Verify(t => t.Receive(Pulse.Low, sut), Times.Once());
     }
@@ -47,7 +50,7 @@ public class FlipFlopTest
     [Fact]
     public void Given_FlipFlop_When_HighPulse_Then_NothingHappens()
     {
-        var sut = new FlipFlop();
+        var sut = new FlipFlop("sut");
 
         sut.Receive(Pulse.High, null);
 

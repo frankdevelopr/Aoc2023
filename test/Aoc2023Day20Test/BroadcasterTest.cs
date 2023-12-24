@@ -13,7 +13,7 @@ public class BroadcasterTest
         var receiver1 = new Mock<IPulseReceiver>();
         var receiver2 = new Mock<IPulseReceiver>();
 
-        var sut = new Broadcaster();
+        var sut = new Broadcaster("broadcaster");
         sut.Connect(receiver1.Object);
         sut.Connect(receiver2.Object);
 

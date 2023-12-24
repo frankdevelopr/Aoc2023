@@ -3,10 +3,16 @@
 public class ButtonSystem
 {
     private readonly string[] _lines;
+    private readonly Broadcaster _initiator;
 
     public ButtonSystem(string[] lines)
     {
         _lines = lines;
+    }
+
+    public ButtonSystem(Broadcaster initiator)
+    {
+        _initiator = initiator;
     }
 
     public long LowPulses { get; set; }
@@ -15,6 +21,8 @@ public class ButtonSystem
 
     public void Push(int pushed)
     {
-        throw new NotImplementedException();
+        _initiator.Receive(Pulse.Low, null);
     }
+
+
 }
