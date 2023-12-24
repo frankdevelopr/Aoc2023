@@ -18,6 +18,6 @@ public class ButtonModuleTest
 
         sut.LowPulses.Should().Be(expectedLowPulses);
         sut.HighPulses.Should().Be(expectedHighPulses);
-        sut.Result.Should().Be(expectedLowPulses*expectedHighPulses)
+        sut.Result.Should().Be(expectedLowPulses*expectedHighPulses);
     }
 }

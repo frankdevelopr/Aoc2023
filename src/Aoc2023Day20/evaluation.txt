@@ -1,9 +1,16 @@
 ﻿work log
+@2h part1
 
 own comments
+* difficult to think how it should be processed
+  * receive just add message to queue of processing
+  * process send to others and process others (2 loops for ordering)
+
 
 own advice
 * need to be very cautious with order, use queues?
+
+
 
 
 evaluation                part1 / part2
