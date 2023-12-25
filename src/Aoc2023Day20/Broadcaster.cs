@@ -23,12 +23,6 @@ public class Broadcaster : PulseSender, IPulseReceiver
         }
 
         return new List<IPulseReceiver>();
-
-        // Do nothing
-        // while (messages)
-        // { var next = Process() -> list of next?
-        //   add(next)
-        // }
     }
 
     public void Receive(Pulse pulse, IPulseReceiver? sender)

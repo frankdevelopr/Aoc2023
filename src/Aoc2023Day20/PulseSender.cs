@@ -7,6 +7,8 @@ public abstract class PulseSender
     protected readonly List<IPulseReceiver> _outputs = new();
 
     public string Name { get; protected set; }
+    public long SentLow { get; protected set; }
+    public long SentHigh { get; protected set; }
     public Queue<Pulse> PendingPulses { get; }
 
     protected PulseSender(string name)
@@ -29,16 +31,21 @@ public abstract class PulseSender
 
     public void SendOthers(Pulse pulse)
     {
-        foreach(var module in _outputs)
+        CountPulse(pulse, _outputs.Count);
+
+        foreach (var module in _outputs)
         {
-            Debug.WriteLine($"{Name} -{pulse.ToString()}-> {module.Name}");
+            Debug.WriteLine($"{Name} -{pulse.ToString().ToLowerInvariant()}-> {module.Name}");
 
             module.Receive(pulse, this as IPulseReceiver);
         }
+    }
 
-        /*foreach (var module in _outputs)
-        {
-            module.Process();
-        }*/
+    protected void CountPulse(Pulse pulse, int times = 1)
+    {
+        if (pulse == Pulse.Low)
+            SentLow += times;
+        else
+            SentHigh += times;
     }
 }

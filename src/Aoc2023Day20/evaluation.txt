@@ -10,6 +10,8 @@ own comments
   * it is not process by level (in order) but in depth
   * add while loop in broadcaster and messages? should every module return its next modules?
 
+* TODO: Clean up castings! Set interface and base class properly
+
 own advice
 * need to be very cautious with order, use queues?
 
