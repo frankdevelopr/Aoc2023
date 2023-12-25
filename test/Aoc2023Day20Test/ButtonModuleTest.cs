@@ -65,11 +65,13 @@ public class ButtonModuleTest
         a.Connect(inv).Connect(con);
         // TODO: Connect inv with its inputs
         inv.Connect(b);
+        inv.RegisterInput(a);
         b.Connect(con);
         con.Connect(output);
+        con.RegisterInput(b);
 
         var button = new ButtonSystem(br);
-        button.Push(1);
+        button.Push(4);
 
         Assert.Fail("Trace is different, fix scenario");
     }
