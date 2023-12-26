@@ -1,14 +1,16 @@
 ﻿work log
+@1h
 
 own comments
-* brute force will work?
+* brute force will work? for part1, as usual yes
 TODO: Move positions tests to utiltests
 
 own advice
-
+* Brute force will work on this?
+  * Note the map doesn't need to repeat but grow, initial map can be used but new coordinates should be mapped to current small map
 
 evaluation                part1 / part2
-difficulty (1st glance):  ***+  /
+difficulty (1st glance):  ***+  / ******
 real difficulty:          **    /
 effort:                   *     /
 enjoy:                    ***   /
