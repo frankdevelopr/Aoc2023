@@ -39,6 +39,30 @@ public class ButtonSystem
         CalculatePulses();
     }
 
+    public long PushRx()
+    {
+        var watch = new Stopwatch();
+        watch.Start();
+        var rx = (Broadcaster)_modules["rx"];
+
+        while (!rx.LowReceived)
+        {
+            LowPulses++;
+
+            Debug.WriteLine($"button -{Pulse.Low.ToString().ToLowerInvariant()}-> {_initiator.Name}");
+
+            _initiator.Receive(Pulse.Low, null);
+            _initiator.Process();
+
+            if (LowPulses % 1_000_000 == 0)
+            {
+                Console.WriteLine($"Processed {LowPulses} in {watch.Elapsed}");
+            }
+        }
+
+        return LowPulses;
+    }
+
     private void CalculatePulses()
     {
         foreach (var module in _modules.Values)

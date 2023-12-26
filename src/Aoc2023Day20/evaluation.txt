@@ -15,11 +15,12 @@ own comments
 own advice
 * need to be very cautious with order, use queues?
 
-
-
+2nd part taking too much time
+13760000000 in hours
+1 million every 3 seconds or so
 
 evaluation                part1 / part2
-difficulty (1st glance):  **** /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  **** / * (but too slow)
+real difficulty:          *** / ?
+effort:                   ***** / *
+enjoy:                    ** / ***

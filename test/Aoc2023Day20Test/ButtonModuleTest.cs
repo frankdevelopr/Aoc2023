@@ -6,6 +6,19 @@ namespace Aoc2023Day20Test;
 public class ButtonModuleTest
 {
     [Theory]
+    [InlineData("data/problem.txt", 1)]
+    public void Given_Button_When_RxLow_Then_ReturnsExpectedPushedTimes(string file, int pushed)
+    {
+        var lines = File.ReadAllLines(file);
+
+        var sut = new ButtonSystem(lines);
+
+        var times = sut.PushRx();
+
+        times.Should().Be(pushed);
+    }
+
+    [Theory]
     [InlineData("data/test.txt", 1, 32, 8, 4)]
     [InlineData("data/test.txt", 1000, 32000000, 8000, 4000)]
     [InlineData("data/test-2.txt", 1000, 11687500L, 4250, 2750)]

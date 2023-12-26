@@ -2,6 +2,8 @@
 
 public class Broadcaster : PulseSender, IPulseReceiver
 {
+    public bool LowReceived { get; private set; }
+
     public Broadcaster(string name) : base(name)
     {
     }
@@ -27,6 +29,8 @@ public class Broadcaster : PulseSender, IPulseReceiver
 
     public void Receive(Pulse pulse, IPulseReceiver? sender)
     {
+        LowReceived = LowReceived || pulse == Pulse.Low;
+
         SendOthers(pulse);
     }
 }
