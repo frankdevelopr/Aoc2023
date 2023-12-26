@@ -1,11 +1,14 @@
 ﻿work log
 
 own comments
+* brute force will work?
+TODO: Move positions tests to utiltests
 
 own advice
 
+
 evaluation                part1 / part2
-difficulty (1st glance):        /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  ***+  /
+real difficulty:          **    /
+effort:                   *     /
+enjoy:                    ***   /
