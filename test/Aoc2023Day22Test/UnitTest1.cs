@@ -1,4 +1,4 @@
-namespace Aoc2023Day19Test;
+namespace Aoc2023Day22Test;
 
 public class UnitTest1
 {
