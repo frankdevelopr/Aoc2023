@@ -1,11 +1,18 @@
 ﻿work log
+@1h
 
 own comments
+* brute force will work? for part1, as usual yes
+TODO: Move positions tests to utiltests
 
 own advice
+* Brute force will work on this?
+  * Note the map doesn't need to repeat but grow, initial map can be used but new coordinates should be mapped to current small map
+
+1_000_000 steps took 205 minutes
 
 evaluation                part1 / part2
-difficulty (1st glance):        /
-real difficulty:                /
-effort:                         /
-enjoy:                          /
+difficulty (1st glance):  ***+  / ******
+real difficulty:          **    /
+effort:                   *     /
+enjoy:                    ***   /
