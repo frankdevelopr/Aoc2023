@@ -1,11 +1,13 @@
 ﻿work log
 
 own comments
+* probably brute force will work ok on part1
+* find algorithm for better performance
 
 own advice
 
 evaluation                part1 / part2
-difficulty (1st glance):        /
+difficulty (1st glance):  ****  /
 real difficulty:                /
 effort:                         /
 enjoy:                          /
