@@ -1,11 +1,17 @@
 ﻿work log
+@0:15h
 
 own comments
+* lazy about AoC2023
 
 own advice
+* function fall down
+* function has support down, to determine a brick can be hold by others
+* determine how many, if 2 supports, one may be eliminated
+* sort brick by Z distance or something, after falling
 
 evaluation                part1 / part2
-difficulty (1st glance):        /
+difficulty (1st glance):  ***** /
 real difficulty:                /
 effort:                         /
 enjoy:                          /
