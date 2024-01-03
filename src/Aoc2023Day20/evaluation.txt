@@ -16,8 +16,11 @@ own advice
 * need to be very cautious with order, use queues?
 
 2nd part taking too much time
-13760000000 in hours
+13.760.000.000 in hours
 1 million every 3 seconds or so
+Processed 28.255.000.000 in 3.03:53:18.2012256
+Processed 30070000000 in 3.07:59:47.1184824
+Processed 69747000000 in 8.19:53:55.2161084
 
 evaluation                part1 / part2
 difficulty (1st glance):  **** / * (but too slow)
